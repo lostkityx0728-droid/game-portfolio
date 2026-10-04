@@ -30,3 +30,9 @@ Use a fresh checkout of https://github.com/lostkityx0728-droid/game-portfolio.gi
 PUBLISH.cmd or publish.sh checks the intended account, main branch and matching origin, stages an explicit website whitelist and performs a normal push. Existing Pages settings must remain main at the repository root. No additional repository or server is required.
 
 Contact and resume fields remain blank. See SOURCES.md and ASSET-NOTICE.md for attribution, and CHECKS.md for local validation scope.
+
+## Moon Vagrant browser preview
+
+The Moon Vagrant detail page loads the actual existing GDevelop HTML5 runtime on demand (about 25 MB). Serve the site over HTTP(S); file:// cannot run the preview. The preview requires a desktop mouse and keyboard. Sound starts muted and can be enabled with a user gesture. Native fullscreen, pause on focus loss, Escape, toolbar Exit and the game menu Exit are supported. Closing the preview unloads its iframe and audio.
+
+Only reviewed browser runtime files listed in game-files.txt are staged by the publishers. Editable engine projects, desktop wrappers and commercial background music are excluded. Compiled JavaScript and runtime data are publicly downloadable, as required to run a browser game. Attribution and full engine/font licences are in games/moon-vagrant/CREDITS.md and its licenses folder.

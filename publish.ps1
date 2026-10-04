@@ -66,10 +66,13 @@ try {
   Run 'git' @('config','user.name',$owner)
   Run 'git' @('config','user.email',"$($profile.id)+$owner@users.noreply.github.com")
   # No recursive git add: only the named website files and supplied assets are staged.
-  $allow = @('index.html','wonderwebby.html','moon-vagrant.html','fanworks.html','ancient-courtyard.html','jiangnan-water-town.html','styles.css','collection.css','site-data.js','projects-data.js','app.js','render.js','experience.js','.nojekyll','.gitignore','README.md','SOURCES.md','CHECKS.md','PUBLISH.cmd','publish.ps1','publish.sh','ASSET-NOTICE.md')
+  $allow = @('index.html','wonderwebby.html','moon-vagrant.html','fanworks.html','ancient-courtyard.html','jiangnan-water-town.html','styles.css','collection.css','playable-game.css','playable-game.js','game-files.txt','site-data.js','projects-data.js','app.js','render.js','experience.js','.nojekyll','.gitignore','.gitattributes','README.md','SOURCES.md','CHECKS.md','PUBLISH.cmd','publish.ps1','publish.sh','ASSET-NOTICE.md')
   $media = @('favicon.svg','greenhouse-shadow.webp','orb-texture.webp','slide5_web_forming.mp4','slide5_web_forming.webp','slide6_hunting_feeding.mp4','slide6_hunting_feeding.webp','slide7_final_reveal.mp4','slide7_final_reveal.webp','wonderwebby-climbing.webp','wonderwebby-cover.webp','wonderwebby-web.webp','moon-vagrant-title.webp','moon-vagrant-comic.webp','moon-vagrant-gameplay.webp','fanworks-overview.webp','fanworks-intake.webp','fanworks-turbines.webp','fanworks-cascade.webp','ancient-courtyard-route.svg','ancient-courtyard-route-mobile.svg','jiangnan-water-town-cover.webp','jiangnan-water-town-altar.webp','jiangnan-water-town-bridge.webp','jiangnan-water-town-gate.webp','jiangnan-water-town-layout.webp')
   $allow += $media | ForEach-Object { 'assets/' + $_ }
+  $gameFiles = @(Get-Content -LiteralPath 'game-files.txt')
+  foreach ($file in $gameFiles) { if ($file -notmatch '^games/moon-vagrant/[A-Za-z0-9_. /+()@-]+$' -or $file -match '\.\.') { throw 'Invalid game runtime manifest path.' } }
   Run 'git' (@('add','--') + $allow)
+  Run 'git' @('add','--pathspec-from-file=game-files.txt')
   $diff = Probe 'git' @('diff','--cached','--quiet')
   if (-not $diff.OK) { Run 'git' @('commit','-m','Update interactive game portfolio') }
   $branch = Probe 'git' @('branch','--show-current')

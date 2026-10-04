@@ -29,3 +29,11 @@ Private documents, participant data, credentials and original game-source folder
 ## Limits
 
 These checks cover the portfolio in this local Chrome environment. They do not verify game balance, uninterrupted game completion or other browsers. Deployment and online smoke checks are separate from this local test record.
+
+## Moon Vagrant playable preview
+
+Local validation in the user's installed Chrome through a static HTTP server with the /game-portfolio/ URL prefix passed 24 checks. The test clicked the actual title Start button, revealed and advanced the comic with real inputs, selected Pick Up, entered Boss combat, moved the real ship and created a real bullet with left mouse input. No runtime errors, HTTP errors or external game requests occurred.
+
+Checked muted initial state, sound after user gestures, native fullscreen entry and exit, focus-loss pause, click-to-resume, Escape unloading and focus return, toolbar Exit, original menu Exit, asset-load failure and successful retry. English and Chinese copy and 390/320 px layouts were checked. Touch controls remain unsupported. Complete victory/endings and all combat balance were not certified by this check.
+
+The reviewed browser package contains 650 files, approximately 25 MB, with a largest file below 2 MB. Commercial music, editable project JSON, desktop executables and private author/project identifiers are excluded. Larger raster textures retain their original dimensions when converted to WebP.

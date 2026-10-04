@@ -18,10 +18,14 @@ gh auth setup-git --hostname github.com
 id=$(gh api user --jq .id)
 git config user.name "$owner"
 git config user.email "$id+$owner@users.noreply.github.com"
-files=(index.html wonderwebby.html moon-vagrant.html fanworks.html ancient-courtyard.html jiangnan-water-town.html styles.css collection.css site-data.js projects-data.js app.js render.js experience.js .nojekyll .gitignore README.md SOURCES.md CHECKS.md PUBLISH.cmd publish.ps1 publish.sh ASSET-NOTICE.md)
+files=(index.html wonderwebby.html moon-vagrant.html fanworks.html ancient-courtyard.html jiangnan-water-town.html styles.css collection.css playable-game.css playable-game.js game-files.txt site-data.js projects-data.js app.js render.js experience.js .nojekyll .gitignore .gitattributes README.md SOURCES.md CHECKS.md PUBLISH.cmd publish.ps1 publish.sh ASSET-NOTICE.md)
 media=(favicon.svg greenhouse-shadow.webp orb-texture.webp slide5_web_forming.mp4 slide5_web_forming.webp slide6_hunting_feeding.mp4 slide6_hunting_feeding.webp slide7_final_reveal.mp4 slide7_final_reveal.webp wonderwebby-climbing.webp wonderwebby-cover.webp wonderwebby-web.webp moon-vagrant-title.webp moon-vagrant-comic.webp moon-vagrant-gameplay.webp fanworks-overview.webp fanworks-intake.webp fanworks-turbines.webp fanworks-cascade.webp ancient-courtyard-route.svg ancient-courtyard-route-mobile.svg jiangnan-water-town-cover.webp jiangnan-water-town-altar.webp jiangnan-water-town-bridge.webp jiangnan-water-town-gate.webp jiangnan-water-town-layout.webp)
 for asset in "${media[@]}"; do files+=("assets/$asset"); done
+while IFS= read -r file; do
+  [[ "$file" == games/moon-vagrant/* && "$file" != *..* ]] || { echo "Invalid game runtime manifest path."; exit 1; }
+done < game-files.txt
 git add -- "${files[@]}"
+git add --pathspec-from-file=game-files.txt
 git diff --cached --quiet || git commit -m 'Update interactive game portfolio'
 [[ $(git branch --show-current) == main ]] || { echo 'Expected main branch.'; exit 1; }
 if git remote | grep -qx origin; then

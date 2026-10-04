@@ -7,3 +7,5 @@ Wonder Webby screenshots and prototype clips are existing public team-project me
 Jiangnan Water Town images show the actual Unreal map and its original top-down layout. The project uses Unreal starter content and third-party environment assets, including Traditional Chinese Style Park. Overwatch is a design reference; no official affiliation or endorsement is implied.
 
 Private game sources, participant information and complete course documents are excluded from this website.
+
+Moon Vagrant's playable browser preview includes the existing compiled GDevelop runtime and registered game assets. Four background music tracks without verified public-use permission are omitted; existing game sound effects remain. Large raster resources use WebP with their original dimensions preserved. GDJS MIT notices, font OFL licences and GDevelop watermarks are retained. See games/moon-vagrant/CREDITS.md for pack and sound-effect credits. Runtime files are public browser assets; the editable GDevelop project and private development metadata are excluded.
