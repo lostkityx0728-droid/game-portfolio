@@ -38,3 +38,6 @@ html[lang="zh-CN"] .collection-empty h3{font-family:SimSun,'Songti SC',serif;fon
 @media(prefers-reduced-motion:reduce){.collection-filters button{transition:none}}
 @media(max-width:560px){html[data-project="ancient-courtyard"] .collection-case .project-title-row h1{font-size:13.5vw}}
 @media(max-width:560px){.case-study .role-grid{display:block}.case-study .role-grid>div{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px 10px;align-items:baseline;padding:19px 0}.case-study .role-grid>div+div{border-top:1px solid var(--line)}.case-study .role-grid .role-number{grid-column:1;grid-row:1}.case-study .role-grid h3{grid-column:2;grid-row:1;font-size:23px;margin:0}.case-study .role-grid p{grid-column:2;grid-row:2;margin:0;font-size:12px;line-height:1.9}html[lang="zh-CN"] .case-study .role-grid h3{font-size:19px;line-height:1.5}}
+
+html[data-project="jiangnan-water-town"] .project-title-row h1{font-size:clamp(64px,8.7vw,124px)}
+@media(max-width:760px){html[data-project="jiangnan-water-town"] .project-title-row h1{font-size:14vw}}

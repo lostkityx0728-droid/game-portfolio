@@ -8,7 +8,7 @@ https://lostkityx0728-droid.github.io/game-portfolio/
 - Wonder Webby: team Unity prototype, with scoped gameplay and interaction contributions.
 - Moon Vagrant: individual GDevelop prototype and playtesting work.
 - FanWorks: three Level 2 segments within a team Unreal project.
-- Ancient Courtyard: three-scene Unity coursework implementation.
+- Jiangnan Water Town: an Overwatch-inspired academic Hybrid FPS level prototype in Unreal Engine 5.6.
 
 The collection supports digital games, levels and environments, gameplay and technical prototypes, and narrative and tabletop filters. Categories overlap. Narrative and tabletop currently has no confirmed public case.
 
