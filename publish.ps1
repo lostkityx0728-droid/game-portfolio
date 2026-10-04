@@ -39,6 +39,7 @@ function Ensure-Tool([string]$Command, [string]$Package) {
   if (-not (Get-Command $Command -ErrorAction SilentlyContinue)) { throw "$Command was installed but is not on PATH yet. Close this window and run PUBLISH.cmd again." }
 }
 try {
+  if (-not (Test-Path -LiteralPath '.git')) { throw 'Copy this revision into a fresh checkout of the existing game-portfolio repository before publishing. This package does not create another repository.' }
   Write-Host "`nTHREAD / WORLD - GitHub Pages publisher" -ForegroundColor Cyan
   Write-Host 'This publishes only the portfolio website. It does not upload a game-engine project.'
   Ensure-Tool 'git' 'Git.Git'
@@ -58,15 +59,16 @@ try {
   $slug = "$owner/$RepoName"
   Write-Host "`nTarget: $slug" -ForegroundColor Cyan
   Write-Host 'Visibility: PUBLIC. Website source, game screenshots and short clips will be publicly accessible.'
-  Write-Host 'Confirm that the team media can be shown publicly. Contact and personal-role placeholders remain blank.'
+  Write-Host 'Confirm the reviewed project screenshots can be shown publicly. Contact fields remain blank.'
   $confirm = Read-Host 'Create/publish this public portfolio now? Type PUBLISH to continue'
   if ($confirm -cne 'PUBLISH') { Write-Host 'Cancelled. Nothing was uploaded.'; exit 0 }
   Run 'gh' @('auth','setup-git','--hostname','github.com')
-  if (-not (Test-Path -LiteralPath '.git')) { Run 'git' @('init','-b','main') }
   Run 'git' @('config','user.name',$owner)
   Run 'git' @('config','user.email',"$($profile.id)+$owner@users.noreply.github.com")
   # No recursive git add: only the named website files and supplied assets are staged.
-  $allow = @('index.html','wonderwebby.html','styles.css','site-data.js','app.js','render.js','experience.js','assets','.nojekyll','.gitignore','README.md','SOURCES.md','CHECKS.md','PUBLISH.cmd','publish.ps1','publish.sh','ASSET-NOTICE.md')
+  $allow = @('index.html','wonderwebby.html','moon-vagrant.html','fanworks.html','ancient-courtyard.html','styles.css','collection.css','site-data.js','projects-data.js','app.js','render.js','experience.js','.nojekyll','.gitignore','README.md','SOURCES.md','CHECKS.md','PUBLISH.cmd','publish.ps1','publish.sh','ASSET-NOTICE.md')
+  $media = @('favicon.svg','greenhouse-shadow.webp','orb-texture.webp','slide5_web_forming.mp4','slide5_web_forming.webp','slide6_hunting_feeding.mp4','slide6_hunting_feeding.webp','slide7_final_reveal.mp4','slide7_final_reveal.webp','wonderwebby-climbing.webp','wonderwebby-cover.webp','wonderwebby-web.webp','moon-vagrant-title.webp','moon-vagrant-comic.webp','moon-vagrant-gameplay.webp','fanworks-overview.webp','fanworks-intake.webp','fanworks-turbines.webp','fanworks-cascade.webp','ancient-courtyard-route.svg','ancient-courtyard-route-mobile.svg')
+  $allow += $media | ForEach-Object { 'assets/' + $_ }
   Run 'git' (@('add','--') + $allow)
   $diff = Probe 'git' @('diff','--cached','--quiet')
   if (-not $diff.OK) { Run 'git' @('commit','-m','Update interactive game portfolio') }
@@ -81,8 +83,7 @@ try {
     Write-Host 'Updating the existing matching origin with a normal fast-forward push.'
     Run 'git' @('push','-u','origin','main')
   } else {
-    # gh refuses to create an already-existing repository. We do not overwrite it.
-    Run 'gh' @('repo','create',$slug,'--public','--source','.','--remote','origin','--push','--description','Game project portfolio - native scroll, animated silk field and cinematic transitions')
+    throw 'The checkout has no origin remote. Use a fresh checkout of the existing game-portfolio repository.'
   }
   Write-Host "`nSource pushed: https://github.com/$slug" -ForegroundColor Green
   $pages = Probe 'gh' @('api',"repos/$slug/pages")

@@ -1,37 +1,31 @@
-# V5 verification — 2026-10-04
+# Local validation
 
-## What was actually exercised
+The game-engine projects were not modified or launched for the website task.
 
-The complete portable HTML preview was loaded into headless Chromium using locally supplied page content. The container blocks normal file/localhost navigation and cannot create a WebGL context. Tests therefore used the animated Canvas2D renderer, not an external deployment or a real GPU.
+## Browser checks
 
-The following interactions passed without captured JavaScript page errors:
+An independent headless Chrome instance ran on the user's Windows computer with a temporary profile. Existing browser windows and accounts were not controlled.
 
-- Live procedural silk opening and scroll-driven expansion to local silent gameplay.
-- Three-scene visual sequence, scroll-linked curved image wipe, and clickable timeline controls.
-- Full-screen menu opening, curtain completion, Escape dismissal, and release of the modal.
-- Direct skip to the project index, transition into Wonder Webby, and return to the home view.
-- Project clip selection by click and arrow keys. The selected clip played with a positive playback time and readyState 4.
-- Screenshot lightbox opening, next image with the keyboard, and Escape dismissal.
-- Chinese/English switching.
-- Explicit Motion off restores unpinned flow and exposes all scene descriptions.
-- System reduced-motion turns decorative motion off and disables the overriding motion control.
+- Five pages at 1440, 390 and 320 pixel widths, in English and Chinese: 30 combinations.
+- No horizontal document overflow, missing loaded images, untranslated key names, page exceptions or HTTP errors.
+- Category counts and pressed states, empty narrative/tabletop category and reset.
+- Keyboard category navigation, live language switching and native case links.
+- Language and category retained on returning to the collection.
+- Menu open/Escape; image viewer next/Escape and focus restoration.
+- Wonder Webby keyboard clip switching and actual MP4 playback.
+- Reduced-motion layouts, normal-motion case transitions and motion toggle.
+- Static English collection links and case content with JavaScript disabled.
 
-## Layout
+182 assertions passed. Desktop and mobile screenshots were captured and visually reviewed in both languages. Narrow-screen corrections include the long Ancient Courtyard title and a readable stacked contribution layout.
 
-Both English and Chinese, and both home and project views, were checked at viewport widths 320, 390, 768, 1024, 1440 and 1920 pixels: 24 combinations. The final run reported no horizontal page overflow. The mobile uppercase project title and resize behaviour of the floating project image were corrected during testing.
+## Content and assets
 
-Desktop opening, expanded game scene, image sequence and menu were captured. Mobile home and sequence were captured in Chinese. The mobile active chapter's description-to-link gap was approximately 29 px in the exercised 390 px viewport.
+The 11 original text files were verified against GitHub blob hashes before edits, from main commit 8104a5addaa57344210de793f5d70ecdc6ac10f6. All 12 existing public media files match the GitHub hashes.
 
-## Source
+New Moon Vagrant and FanWorks images are converted copies of selected project screenshots. No gameplay or audio was generated. Ancient Courtyard uses a labelled scene-order diagram with a vertical mobile variant; it is not a game screenshot.
 
-All four JavaScript files passed Node syntax checking. The Bash publisher passed `bash -n`. Local image, stylesheet and script references were checked against files in the package. The Windows publisher was reviewed but could not be executed in this Linux container; no Windows end-to-end result is claimed.
-
-## Delivery and publication
-
-A local Git repository is included. **No commit was pushed to GitHub and no public website was created during this conversation.** The active GitHub connector exposes read operations, not repository creation or push. The publisher scripts require the account holder to log in through the official GitHub CLI and confirm public publication on their computer.
-
-The MP4 walkthrough is a recording of the actual browser interaction layer, using the Canvas2D renderer. It is not a prerendered website animation used by the site itself. The portable preview lets the user operate the same interactions.
+Private documents, participant data, credentials and original game-source folders are excluded from the website. Publishing scripts received syntax checks.
 
 ## Limits
 
-The WebGL shader branch has not been verified on an actual GPU. Safari, Firefox, physical-device touch interaction, screen-reader behaviour and the remote GitHub Pages build have not been tested. No performance score, full accessibility compliance, perfect reproduction of the reference site's animation or universal browser support is claimed.
+These checks cover the portfolio in this local Chrome environment. They do not verify game balance, uninterrupted game completion or other browsers. Deployment and online smoke checks are separate from this local test record.

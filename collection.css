@@ -1,0 +1,40 @@
+/* Collection and case-study additions use the established editorial palette. */
+.collection-filters{display:flex;flex-wrap:wrap;gap:8px 24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.collection-filters button{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:9px 0;background:none;font-size:11px;line-height:1.5;color:var(--muted);border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.collection-filters button[aria-pressed="true"]{color:var(--paper);border-color:var(--paper)}
+.collection-filters button:hover{color:var(--paper)}
+.filter-count{font-size:8px;opacity:.65;align-self:start;padding-top:2px}
+.collection-results{display:flex;justify-content:flex-end;padding:16px 0;font-size:10px;color:var(--muted)}
+.collection-empty{padding:62px 0 42px;max-width:650px}
+.collection-empty h3{font-size:clamp(35px,4vw,58px);line-height:1.15}
+.collection-empty>p{font-size:13px;max-width:480px;margin:22px 0;color:var(--muted)}
+.collection-empty .text-link{background:none;margin-top:6px;min-height:44px}
+.case-engine{margin-top:24px}
+.collection-case .project-title-row h1{font-size:clamp(72px,10vw,152px);overflow-wrap:normal;line-height:.96}
+.collection-case .project-title-row{gap:5%}
+.collection-case .project-facts dd{font-size:12px;line-height:1.65;max-width:220px}
+.case-hero-media{margin-top:12px;margin-bottom:74px}
+.case-hero-media figure{background:var(--deep)}
+.case-hero-media img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.case-hero-media figcaption{padding:16px 0;background:var(--bg);color:var(--muted);font-size:11px;line-height:1.8}
+.case-scope{border-top:1px solid var(--line);margin-top:38px;padding-top:23px;color:var(--muted)}
+.case-scope>.eyebrow{color:inherit;opacity:.65;margin-bottom:12px;font-size:9px}
+.case-scope>p:not(.eyebrow){font-size:13px;line-height:1.9}
+.case-scope>p+p:not(.eyebrow){margin-top:14px}
+.contribution-section .case-scope{border-color:var(--line);color:var(--muted)}
+.collection-case .credits-body{display:block}
+.collection-case .credits-body>p{max-width:730px;font-size:13px;line-height:1.95}
+.case-gallery figure:only-child{grid-column:1/-1}
+.case-gallery .gallery-image{aspect-ratio:16/9}
+.case-gallery .gallery-image img{object-fit:contain;aspect-ratio:16/9;background:#292926}
+.case-gallery .zoom-icon{font-size:28px;line-height:1}
+.case-study .role-grid p{font-size:12px;line-height:1.9}
+.collection-case .project-nav .eyebrow{line-height:1.5}
+html[lang="zh-CN"] .collection-case .project-title-row h1{font-family:var(--serif)}
+html[lang="zh-CN"] .collection-empty h3{font-family:SimSun,'Songti SC',serif;font-size:38px;line-height:1.4;letter-spacing:0}
+@media(max-width:1000px){.collection-case .project-title-row h1{font-size:10.4vw}.collection-case .project-facts{gap:20px}.collection-case .project-facts dd{font-size:11px}}
+@media(max-width:760px){.collection-filters{gap:4px 20px}.collection-filters button{font-size:10px}.collection-case .project-title-row h1{font-size:14vw}.case-hero-media{margin-bottom:48px}.collection-case .project-facts dd{font-size:12px}}
+@media(max-width:560px){.collection-filters{gap:4px 19px;padding-bottom:18px}.collection-filters button{font-size:10px;max-width:100%;gap:7px}.collection-results{font-size:9px}.collection-empty{padding-top:43px}.collection-empty h3{font-size:35px}.collection-empty>p{font-size:12px}.collection-case .project-title-row h1{font-size:16vw;line-height:1;letter-spacing:-.04em}.collection-case .project-title-row>div{margin-top:24px}.collection-case .project-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px}.collection-case .project-facts dd{max-width:none;font-size:11px}.collection-case .project-lead{font-size:19px}.case-hero-media figcaption{font-size:10px;padding-top:12px}.case-scope>p:not(.eyebrow){font-size:12px}.collection-case .credits-body>p{font-size:12px}.collection-case[data-route] .case-hero-media img{aspect-ratio:3/5}.case-gallery{gap:26px}.collection-empty .text-link{font-size:11px}.case-engine{margin-top:18px}}
+@media(prefers-reduced-motion:reduce){.collection-filters button{transition:none}}
+@media(max-width:560px){html[data-project="ancient-courtyard"] .collection-case .project-title-row h1{font-size:13.5vw}}
+@media(max-width:560px){.case-study .role-grid{display:block}.case-study .role-grid>div{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px 10px;align-items:baseline;padding:19px 0}.case-study .role-grid>div+div{border-top:1px solid var(--line)}.case-study .role-grid .role-number{grid-column:1;grid-row:1}.case-study .role-grid h3{grid-column:2;grid-row:1;font-size:23px;margin:0}.case-study .role-grid p{grid-column:2;grid-row:2;margin:0;font-size:12px;line-height:1.9}html[lang="zh-CN"] .case-study .role-grid h3{font-size:19px;line-height:1.5}}

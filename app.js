@@ -3,6 +3,9 @@
   'use strict';
   const data = window.PORTFOLIO;
   if (!data?.languages) return;
+  const projectId = document.documentElement.dataset.project || 'wonderwebby';
+  const project = data.projects?.find(item => item.id === projectId);
+  const clips = project?.clips || (projectId === 'wonderwebby' ? data.clips : []);
   document.documentElement.classList.add('js');
   const $ = (selector, parent = document) => parent.querySelector(selector);
   const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
@@ -19,9 +22,9 @@
   const pauseAll = () => $$('video').forEach(v => v.pause());
 
   function updateTitle() {
-    const project = document.documentElement.dataset.page === 'project';
-    document.title = project ? `Wonder Webby — ${data.profile.name}` : `${data.profile.name} — ${lang === 'zh' ? '游戏项目作品集' : 'Game Projects'}`;
-    $$('[data-nav="games"]').forEach(a => a.toggleAttribute('aria-current', project));
+    const isProject = document.documentElement.dataset.page === 'project';
+    document.title = isProject ? `${project?.title || 'Wonder Webby'} — ${data.profile.name}` : `${data.profile.name} — ${lang === 'zh' ? '游戏项目作品集' : 'Game Projects'}`;
+    $$('[data-nav="games"]').forEach(a => a.toggleAttribute('aria-current', isProject));
     $$('[data-nav="games"][aria-current]').forEach(a => a.setAttribute('aria-current', 'location'));
   }
   function applyLanguage() {
@@ -31,10 +34,21 @@
     $$('[data-language-current]').forEach(el => { el.textContent = lang === 'en' ? 'EN' : '中'; });
     $$('[data-language-other]').forEach(el => { el.textContent = lang === 'en' ? '中' : 'EN'; });
     $$('.language-button').forEach(el => el.setAttribute('aria-label', lang === 'en' ? '切换到中文' : 'Switch to English'));
-    if ($('#clip-note') && data.clips[selectedClip]) $('#clip-note').textContent = t(data.clips[selectedClip].noteKey);
+    if ($('#clip-note') && clips[selectedClip]) $('#clip-note').textContent = t(clips[selectedClip].noteKey);
+    $$('[data-i18n-alt]').forEach(el => el.alt = t(el.dataset.i18nAlt));
     $$('[data-lightbox]').forEach(el => { const img = $('img', el); if (img) img.alt = t(el.dataset.caption); });
     if ($('#lightbox')?.open) renderLightbox();
     updateTitle();
+    updateCollection();
+    // Carry language and the chosen category through native page navigation.
+    $$('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!/^[\w-]+\.html(?:[?#].*)?$/.test(href)) return;
+      const destination = new URL(href, location.href);
+      destination.searchParams.set('lang', lang);
+      if (destination.pathname.endsWith('/index.html') && destination.hash === '#games') destination.searchParams.set('category', activeCategory);
+      link.setAttribute('href', destination.pathname.split('/').pop() + destination.search + destination.hash);
+    });
     document.dispatchEvent(new Event("portfolio:language"));
   }
   $$('[data-profile-name]').forEach(el => { el.textContent = data.profile.name; });
@@ -56,7 +70,54 @@
   }
   $$('.language-button').forEach(button => button.addEventListener('click', () => {
     lang = lang === 'en' ? 'zh' : 'en'; local.set(lang); applyLanguage();
+    const url = new URL(location.href); url.searchParams.set('lang', lang);
+    try { history.replaceState(null, '', url); } catch { /* Direct-file browsing can restrict History. */ }
   }));
+
+  const filters = $$('[data-filter]');
+  const projectRows = $$('[data-project-id]');
+  const categories = ['all', ...(data.categories || [])];
+  let savedCategory = 'all';
+  try { savedCategory = localStorage.getItem('portfolio-category') || 'all'; } catch {}
+  let activeCategory = new URLSearchParams(location.search).get('category') || savedCategory;
+  if (!categories.includes(activeCategory)) activeCategory = 'all';
+  function updateCollection() {
+    if (!projectRows.length) return;
+    let count = 0;
+    projectRows.forEach(row => {
+      const visible = activeCategory === 'all' || row.dataset.categories.split(' ').includes(activeCategory);
+      row.hidden = !visible; if (visible) count++;
+    });
+    filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === activeCategory)));
+    const status = $('#collection-count');
+    if (status) status.textContent = t(count === 1 ? 'collection.count.one' : 'collection.count.many').replace('{count}', count);
+    const empty = $('.collection-empty'); if (empty) empty.hidden = count > 0;
+  }
+  function selectCategory(category) {
+    if (!categories.includes(category)) return;
+    activeCategory = category;
+    try { localStorage.setItem('portfolio-category', category); } catch {}
+    updateCollection();
+    const url = new URL(location.href); url.searchParams.set('category', category);
+    try { history.replaceState(null, '', url); } catch {}
+  }
+  $('.collection-filters')?.removeAttribute('hidden');
+  filters.forEach((button, index) => {
+    button.addEventListener('click', () => selectCategory(button.dataset.filter));
+    button.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % filters.length;
+      if (event.key === 'ArrowLeft') next = (index + filters.length - 1) % filters.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = filters.length - 1;
+      if (next !== undefined) { event.preventDefault(); filters[next].focus(); }
+    });
+  });
+  $('[data-reset-filter]')?.addEventListener('click', () => { selectCategory('all'); filters[0]?.focus(); });
+  window.addEventListener('popstate', () => {
+    const category = new URLSearchParams(location.search).get('category') || 'all';
+    if (categories.includes(category)) { activeCategory = category; updateCollection(); }
+  });
 
   // An explicit scroll avoids sticky-header anchor ambiguity.
   $$('.back-top').forEach(link => link.addEventListener('click', event => {
@@ -90,7 +151,7 @@
   const projectVideo = $('#project-video');
   const tabs = $$('.clip-tab');
   function selectClip(index, focus = false) {
-    const clip = data.clips[index];
+    const clip = clips[index];
     if (!clip || !projectVideo) return;
     selectedClip = index; projectVideo.pause();
     projectVideo.src = clip.src; projectVideo.poster = clip.poster;

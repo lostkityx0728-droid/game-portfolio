@@ -110,7 +110,7 @@
     if(traceImg){const r=traceImg.getBoundingClientRect();tracePointer=[clamp((tx-r.left)/r.width),clamp(1-(ty-r.top)/r.height)];}
     const target=e.target.closest('[data-cursor]');cursorTarget=target;if(target&&cursor)$('span',cursor).textContent=text('cursor.'+target.dataset.cursor);
     const row=e.target.closest('.project-row');
-    if(row&&motion&&fine.matches){const r=row.getBoundingClientRect(),image=$('.row-preview',row);image.style.left=clamp(tx-r.left,r.width*.46,r.width*.78)+'px';image.style.top=clamp(ty-r.top,20,r.height-15)+'px';image.style.transform=`translate(-50%,-50%) rotate(${(tx-r.left-r.width*.5)*.015-6}deg)`;}
+    if(row&&motion&&fine.matches){const r=row.getBoundingClientRect(),image=$('.row-preview',row);if(image){image.style.left=clamp(tx-r.left,r.width*.46,r.width*.78)+'px';image.style.top=clamp(ty-r.top,20,r.height-15)+'px';image.style.transform=`translate(-50%,-50%) rotate(${(tx-r.left-r.width*.5)*.015-6}deg)`;}}
   },{passive:true});
   document.addEventListener('pointerleave',()=>{cursorTarget=null;pointer=[.5,.5];tracePointer=[.5,.5];});
   // Accessible scene controls mirror the scroll timeline, without capturing wheel or touch events.
@@ -162,7 +162,8 @@
     const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download')||a.hasAttribute('data-lightbox')||a.hasAttribute('data-journey-start'))return;
     const href=a.getAttribute('href');const portable=root.dataset.preview==='true';
     const inMenu=!!a.closest('.menu-links');
-    const isPage=portable?((href.startsWith('#project')&&root.dataset.page!=='project')||(href.startsWith('#home')&&root.dataset.page==='project')):/^(?:index|wonderwebby)\.html(?:#.*)?$/.test(href);
+    const knownPages=['index.html',...(window.PORTFOLIO?.projects||[]).map(project=>project.file)];
+    const isPage=portable?((href.startsWith('#project')&&root.dataset.page!=='project')||(href.startsWith('#home')&&root.dataset.page==='project')):knownPages.includes(href.split(/[?#]/)[0]);
     if(!inMenu&&!isPage)return;
     if(!motion){if(inMenu)closeImmediate();return;}
     e.preventDefault();if(transitioning)return;
