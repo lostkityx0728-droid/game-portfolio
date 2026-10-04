@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+node_modules/
+.env
+.env.*
+*.pem
+*.key
+*.log
+.vscode/
+.idea/
+preview.html
+portfolio-v5-preview.html
+*.zip
+*.bundle
