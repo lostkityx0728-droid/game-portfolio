@@ -1,8 +1,8 @@
-# Local validation
+# Validation records
 
 The game-engine projects were not modified or launched for the website task.
 
-## Browser checks
+## Previous revision browser checks
 
 An independent headless Chrome instance ran on the user's Windows computer with a temporary profile. Existing browser windows and accounts were not controlled.
 
@@ -37,3 +37,11 @@ Local validation in the user's installed Chrome through a static HTTP server wit
 Checked muted initial state, sound after user gestures, native fullscreen entry and exit, focus-loss pause, click-to-resume, Escape unloading and focus return, toolbar Exit, original menu Exit, asset-load failure and successful retry. English and Chinese copy and 390/320 px layouts were checked. Touch controls remain unsupported. Complete victory/endings and all combat balance were not certified by this check.
 
 The reviewed browser package contains 650 files, approximately 25 MB, with a largest file below 2 MB. Commercial music, editable project JSON, desktop executables and private author/project identifiers are excluded. Larger raster textures retain their original dimensions when converted to WebP.
+
+## Six-project collection revision
+
+The owner-supplied PortfolioG directory contains three project PDFs. These were read locally and kept intact; only 13 selected crops, approximately 0.8 MB combined, are included in the site. No full PDF, private document link, student identifier or source-engine project was added. Testament uses a neutral exploration screenshot. New pages describe prototype scope, unimplemented inventory, unverified chapter completion, documented third-party references and the non-commercial tabletop study context.
+
+Local Chrome validation passed 558 assertions over 42 combinations: home plus all six cases, at 1440, 390 and 320 px in English and Chinese. Checked loaded images, native links, category counts (6/3/2/1/2), filters, keyboard navigation, case links, language and category persistence, new galleries and captions, menu/Escape, reduced motion, normal motion transitions, static English with JavaScript disabled and the explicit FanWorks legacy-link guide. Representative screenshots were visually reviewed.
+
+Moon Vagrant regression passed 25 checks with real inputs through title, comic and combat. Movement, shooting, right-mouse dash with fuel consumption, sound, fullscreen, focus-loss pause, resume, Escape, toolbar/menu Exit and failed-load retry all worked. Its page, controls and all 650 runtime assets were byte-preserved, alongside Wonder Webby and Jiangnan Water Town’s pages and corrected screenshots.

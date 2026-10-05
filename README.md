@@ -7,10 +7,12 @@ https://lostkityx0728-droid.github.io/game-portfolio/
 
 - Wonder Webby: team Unity prototype, with scoped gameplay and interaction contributions.
 - Moon Vagrant: individual GDevelop prototype and playtesting work.
-- FanWorks: three Level 2 segments within a team Unreal project.
+- Testament: Unity narrative and interaction prototype.
+- Fukuoka Central Street: Unreal street and interior environment study.
+- Yakuza — Dragon of Kamurocho: non-commercial, fan-inspired physical tabletop study.
 - Jiangnan Water Town: an Overwatch-inspired academic Hybrid FPS level prototype in Unreal Engine 5.6.
 
-The collection supports digital games, levels and environments, gameplay and technical prototypes, and narrative and tabletop filters. Categories overlap. Narrative and tabletop currently has no confirmed public case.
+The collection supports digital games, levels and environments, gameplay and technical prototypes, and narrative and tabletop filters. Categories overlap. Testament and Dragon of Kamurocho populate the narrative and tabletop category. FanWorks is retired from the collection; its old URL offers a clear link to current work.
 
 ## Preview and structure
 
