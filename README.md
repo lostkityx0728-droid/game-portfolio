@@ -46,3 +46,7 @@ GSAP provides a short entrance timeline, one-shot ScrollTrigger reveals, reusabl
 The Moon Vagrant detail page loads the actual existing GDevelop HTML5 runtime on demand (about 25 MB). Serve the site over HTTP(S); file:// cannot run the preview. The preview requires a desktop mouse and keyboard. Sound starts muted and can be enabled with a user gesture. Native fullscreen, pause on focus loss, Escape, toolbar Exit and the game menu Exit are supported. Closing the preview unloads its iframe and audio.
 
 Only reviewed browser runtime files listed in game-files.txt are staged by the publishers. Editable engine projects, desktop wrappers and commercial background music are excluded. Compiled JavaScript and runtime data are publicly downloadable, as required to run a browser game. Attribution and full engine/font licences are in games/moon-vagrant/CREDITS.md and its licenses folder.
+
+## Art direction revision
+
+The art-directed homepage uses one clean prototype image with a compact introduction, followed by six consistently framed cases. Each case has a short experience description and contribution/tool context. The mobile category controls use a native disclosure, and an independent Play Moon Vagrant link leads to the existing playable section without automatic loading. DM Sans and Noto Sans SC are locally hosted, licensed WOFF2 subsets. No prototype engineering files are changed. Motion is limited to entrance/menu/arrow feedback and a gallery reveal; there are no scrolling project-card reveals or arbitrary card offsets.

@@ -1,0 +1,46 @@
+{
+  "commit": "bd8f81ddb5c74d5c8897b36ad88b440266245103",
+  "files": [
+    {
+      "family": "dmsans",
+      "name": "DMSans[opsz,wght].ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/dmsans/DMSans%5Bopsz%2Cwght%5D.ttf",
+      "bytes": 240164,
+      "sha256": "8cd08d97e89c24d0aa92edd2f0f4c8ee6195eee9b7c9f154865a58b02f0c1c0d"
+    },
+    {
+      "family": "dmsans",
+      "name": "OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/dmsans/OFL.txt",
+      "bytes": 4482,
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
+    },
+    {
+      "family": "notosanssc",
+      "name": "NotoSansSC[wght].ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+      "bytes": 17772300,
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "family": "notosanssc",
+      "name": "OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/notosanssc/OFL.txt",
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    }
+  ],
+  "subsets": [
+    {
+      "file": "fonts/dmsans.woff2",
+      "sha256": "3dda57a973a26de298b59f1a8c172a394a9b1a69aedc3be41edcb1cafb9cadfc",
+      "bytes": 57596
+    },
+    {
+      "file": "fonts/notosanssc.woff2",
+      "sha256": "09b9356b0543118a69cd1f5d3c9f670b0c64fe10ec6d8fcb0700ec1afdb1a98c",
+      "bytes": 222024
+    }
+  ],
+  "note": "WOFF2 subsets include the portfolio bilingual strings, Latin text and punctuation. Family names and OFL licences are retained."
+}

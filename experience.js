@@ -7,7 +7,7 @@
   const reduce=matchMedia('(prefers-reduced-motion: reduce)'), systemTheme=matchMedia('(prefers-color-scheme: light)');
   const gsap=window.gsap, ST=window.ScrollTrigger;
   const storage={get(k){try{return localStorage.getItem(k)}catch{return null}},set(k,v){try{localStorage.setItem(k,v)}catch{}}};
-  let preference=storage.get('portfolio-motion')||'on', themePreference=storage.get('portfolio-theme');
+  let preference=storage.get('portfolio-motion')||'on', themePreference=storage.get('portfolio-theme')||'dark';
   let motion=false, media=null, leaving=false, exitTimer=0, menuTween=null, revealCount=0, revealTargets=[];
   const lang=()=>root.lang==='zh-CN'?'zh':'en';
   const text=k=>window.PORTFOLIO?.languages[lang()]?.[k]||window.PORTFOLIO?.languages.en?.[k]||k;
@@ -45,12 +45,12 @@
       const nav=performance.getEntriesByType('navigation')[0];
       if(!location.hash&&nav?.type!=='back_forward'&&scrollY<50){
         const entrance=gsap.timeline({defaults:{duration:.6,ease:'power3.out',clearProps:'transform,opacity'}});
-        const identity=$$('.hero-kicker,.folio-hero h1,.hero-summary,.folio-cta,.project-title-row h1,.project-title-row>div');
+        const identity=$$('.art-discipline,.art-intro h1,.art-intro-text,.folio-cta,.project-title-row h1,.project-title-row>div');
         entrance.addLabel('identity',0);if(identity.length)entrance.from(identity,{y:22,opacity:.6,stagger:.06},'identity');
-        const artwork=$('.hero-feature,.project-media,.case-hero-media');if(artwork)entrance.from(artwork,{y:18,opacity:.65},'identity+=.12');
+        const artwork=$('.art-stage,.project-media,.case-hero-media');if(artwork)entrance.from(artwork,{y:18,opacity:.65},'identity+=.12');
       }
       // Content stays readable throughout every one-shot reveal.
-      const targets=$$('.project-row,.statement,.project-article>section,.project-end'), cleanups=[];revealTargets=targets;revealCount=0;
+      const targets=$$('.gallery-section'), cleanups=[];revealTargets=targets;revealCount=0;
       targets.forEach(target=>{
         if(target.getBoundingClientRect().top<innerHeight*.95)return;
         const tween=gsap.from(target,{y:ctx.conditions.desktop?24:14,opacity:.65,duration:.55,ease:'power3.out',clearProps:'transform,opacity',scrollTrigger:{trigger:target,start:'top 94%',once:true,toggleActions:'play none none none'}});
@@ -90,5 +90,8 @@
   window.addEventListener('pagehide',()=>{if(exitTimer)clearTimeout(exitTimer);exitTimer=0;teardown()});
   window.addEventListener('pageshow',e=>{leaving=false;$('main')?.style.removeProperty('opacity');$('main')?.style.removeProperty('transform');if(e.persisted)applyMotion()});
   window.PORTFOLIO_DIAGNOSTICS={get motion(){return motion},get opening(){return 0},get chapter(){return 0},get renderers(){return ['static','static']},get gsapVersion(){return gsap?.version||null},get triggers(){return ST?.getAll().length||0},get revealCount(){return revealCount}};
+  // Native disclosure keeps five categories usable without taking over the mobile viewport.
+  const filterDetails=$('.art-filter-details');
+  if(filterDetails){const mobile=matchMedia('(max-width:767px)');const layoutFilters=()=>{filterDetails.open=!mobile.matches};layoutFilters();mobile.addEventListener('change',layoutFilters);filterDetails.addEventListener('toggle',refresh)}
   applyTheme();applyMotion();
 })();
