@@ -57,7 +57,7 @@
   const nameParts = data.profile.name.trim().split(/\s+/);
   $$('[data-name-first]').forEach(el => { el.textContent = (nameParts.length > 1 ? nameParts.slice(0, -1).join(' ') : nameParts[0]).toUpperCase(); });
   $$('[data-name-last]').forEach(el => { el.textContent = (nameParts.length > 1 ? nameParts.at(-1) : '').toUpperCase(); });
-  if ($('#hero-title')?.querySelector('[data-name-first]')) $('#hero-title').setAttribute('aria-label', data.profile.name);
+  $('#hero-title')?.setAttribute('aria-label', data.profile.name);
   const email = typeof data.profile.email === 'string' ? data.profile.email.trim() : '';
   if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     $$('.email-link').forEach(el => { el.href = 'mailto:' + email; el.hidden = false; });
@@ -98,7 +98,6 @@
     activeCategory = category;
     try { localStorage.setItem('portfolio-category', category); } catch {}
     updateCollection();
-    document.dispatchEvent(new Event("portfolio:collection"));
     const url = new URL(location.href); url.searchParams.set('category', category);
     try { history.replaceState(null, '', url); } catch {}
   }

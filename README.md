@@ -22,8 +22,6 @@ Open index.html or serve this directory with a static server. Each page includes
 - projects-data.js: confirmed project data, categories and bilingual copy.
 - app.js: language, filtering, media controls and page accessibility.
 - experience.js: motion, menus and case transitions.
-- design.css and design-data.js: the image-led composition, shared typography, colour themes and presentation-only bilingual strings.
-- vendor/gsap/: pinned official GSAP 3.15.0 core and ScrollTrigger, copyright headers, full standard licence and source hashes. Essential content and menu navigation remain usable when these optional libraries fail to load.
 - collection.css: collection and case responsive styles.
 - assets/: selected screenshots, scene-order diagrams and existing public clips.
 
@@ -35,18 +33,8 @@ PUBLISH.cmd or publish.sh checks the intended account, main branch and matching 
 
 Contact and resume fields remain blank. See SOURCES.md and ASSET-NOTICE.md for attribution, and CHECKS.md for local validation scope.
 
-## Visual refresh
-
-The homepage pairs Rong Guo's identity with real Wonder Webby gameplay. The six cases have directly visible images, an asymmetric desktop composition, and a single-column mobile layout. Project slugs, filters, source records and all contribution/scope text remain authoritative. A system-aware light/dark toggle is available.
-
-GSAP provides a short entrance timeline, one-shot ScrollTrigger reveals, reusable arrow hover tweens, menu sequencing and a 140 ms exit response before native page navigation. Scrolling and browser history are native. There are no pinned sections, decorative orbs, custom cursors or continuous WebGL rendering. Reduced motion and the existing manual motion control disable the animation setup and clean up its triggers.
-
 ## Moon Vagrant browser preview
 
 The Moon Vagrant detail page loads the actual existing GDevelop HTML5 runtime on demand (about 25 MB). Serve the site over HTTP(S); file:// cannot run the preview. The preview requires a desktop mouse and keyboard. Sound starts muted and can be enabled with a user gesture. Native fullscreen, pause on focus loss, Escape, toolbar Exit and the game menu Exit are supported. Closing the preview unloads its iframe and audio.
 
 Only reviewed browser runtime files listed in game-files.txt are staged by the publishers. Editable engine projects, desktop wrappers and commercial background music are excluded. Compiled JavaScript and runtime data are publicly downloadable, as required to run a browser game. Attribution and full engine/font licences are in games/moon-vagrant/CREDITS.md and its licenses folder.
-
-## Art direction revision
-
-The art-directed homepage uses one clean prototype image with a compact introduction, followed by six consistently framed cases. Each case has a short experience description and contribution/tool context. The mobile category controls use a native disclosure, and an independent Play Moon Vagrant link leads to the existing playable section without automatic loading. DM Sans and Noto Sans SC are locally hosted, licensed WOFF2 subsets. No prototype engineering files are changed. Motion is limited to entrance/menu/arrow feedback and a gallery reveal; there are no scrolling project-card reveals or arbitrary card offsets.

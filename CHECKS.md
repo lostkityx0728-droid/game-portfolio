@@ -45,22 +45,3 @@ The owner-supplied PortfolioG directory contains three project PDFs. These were 
 Local Chrome validation passed 558 assertions over 42 combinations: home plus all six cases, at 1440, 390 and 320 px in English and Chinese. Checked loaded images, native links, category counts (6/3/2/1/2), filters, keyboard navigation, case links, language and category persistence, new galleries and captions, menu/Escape, reduced motion, normal motion transitions, static English with JavaScript disabled and the explicit FanWorks legacy-link guide. Representative screenshots were visually reviewed.
 
 Moon Vagrant regression passed 25 checks with real inputs through title, comic and combat. Movement, shooting, right-mouse dash with fuel consumption, sound, fullscreen, focus-loss pause, resume, Escape, toolbar/menu Exit and failed-load retry all worked. Its page, controls and all 650 runtime assets were byte-preserved, alongside Wonder Webby and Jiangnan Water Town’s pages and corrected screenshots.
-# Visual refresh validation, 12 October 2026
-
-Installed Windows Chrome verified all seven active pages in English and Chinese at 1440, 390 and 320 pixels: 558 checks passed, with no page or HTTP errors. This covers six project links, category counts/filter keyboard navigation, language persistence, native case links and returns, menus, new-case lightboxes, no-JavaScript content and the legacy FanWorks guide.
-
-The actual Moon Vagrant runtime passed 25 gameplay checks: title, story sequence, real ship movement, bullets, dash/fuel, user-gesture audio, fullscreen, blur pause/resume, Escape, native-menu Exit, toolbar Exit, mobile notice and a blocked-asset failure/retry. No external game or website requests occurred.
-
-56 additional presentation checks passed for real GSAP setup, native anchor scrolling, visible image links, filters, repeated motion on/off cleanup, viewport changes, translated modal menus and keyboard focus restoration, theme persistence, native browser Back, OS reduced motion and complete animation-library failure fallback. A lazy-image refresh that interrupted native smooth scrolling was removed; reserved media aspect ratios avoid the unnecessary recalculation.
-
-Lab Chrome observations on localhost covered desktop/mobile and both colour schemes: LCP below 0.4 seconds, CLS below 0.01, and minimum tested main-text contrast above 6:1. These are local lab measurements, not Lighthouse scores or field performance claims. Lighthouse was unavailable because this execution environment does not provide npm/Lighthouse.
-
-All existing screenshot/media files, the 650 Moon runtime files, project data dictionaries, playable controller/styles and runtime manifest are preserved. No original engine projects or source PDFs were modified or added to the website. The refresh is prepared on a local branch; these results do not claim the new revision is deployed.
-
-## Art direction review
-
-Actual Windows Chrome screenshots were reviewed in English and Chinese at desktop and mobile sizes. An independent visual reviewer inspected the pixel results twice. Corrections included replacing the editor-chrome hero with a clean silk-network video frame, using a separate traversal frame for the Wonder Webby case, retaining the complete Moon title/watermark, isolating the Testament scene sketch from adjacent diagrams, keeping the full tabletop photograph, reducing empty space, collapsing mobile filters with native details, and removing a large contact invitation without a real contact address. A legacy forced line-break on project names was also removed.
-
-The seven active routes passed the existing 558 checks across 42 page/width/language combinations. The actual Moon runtime passed 25 gameplay checks with no external requests or errors. Additional art-direction interaction checks verify the self-hosted fonts, uniform image frames, first project/name visibility within a 900 px mobile viewport, native filter disclosure, direct Moon playable-section link without automatic loading, keyboard/menu focus, motion cleanup, colour controls, browser Back and missing-GSAP fallback.
-
-The 650 Moon runtime files, existing public media, original project language dictionaries and case overview/contribution/process/credits sections remain unchanged. New images are authorised excerpts from the same project materials. Source PDFs, editor projects and private links are excluded. DM Sans and Noto Sans SC are self-hosted OFL subsets with complete licences and source hashes. This record describes local preparation, not a deployed revision.
