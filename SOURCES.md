@@ -13,3 +13,6 @@ Moon Vagrant's browser preview was derived from the existing exported game, with
 - Testament: selected Unity prototype views, scene sketches and original flow diagrams from the owner-supplied portfolio. The inventory is explicitly unfinished; completed chapters and save persistence are not certified. Literary and game references remain their authors’ work.
 - Fukuoka Central Street: selected authored Unreal scene captures and process views from the owner-supplied portfolio. Yakuza 5 streets and Shenmue’s Hazuki Residence are documented references. Assembled third-party character/environment models are not claimed as original modelling work.
 - Yakuza — Dragon of Kamurocho: selected physical prototype photographs and a turn-flow excerpt from the owner-supplied portfolio. Yakuza / Like a Dragon provides the setting and character references; Rurik: Dawn of Kiev informs the territory-annexation mechanic. This is an unofficial, non-commercial learning prototype. No print-and-play assets or full source documents are distributed.
+# Visual refresh dependency
+
+The locally hosted GSAP core and ScrollTrigger are copied unchanged from the official greensock/GSAP repository, version 3.15.0, commit 13e2b790546426a1a2e0e9b409f3f8dc6d6611f2. See vendor/gsap/SOURCE.json for exact URLs and SHA256 hashes, and vendor/gsap/LICENSE.txt for the standard no-charge licence.

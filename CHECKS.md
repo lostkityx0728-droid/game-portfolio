@@ -45,3 +45,14 @@ The owner-supplied PortfolioG directory contains three project PDFs. These were 
 Local Chrome validation passed 558 assertions over 42 combinations: home plus all six cases, at 1440, 390 and 320 px in English and Chinese. Checked loaded images, native links, category counts (6/3/2/1/2), filters, keyboard navigation, case links, language and category persistence, new galleries and captions, menu/Escape, reduced motion, normal motion transitions, static English with JavaScript disabled and the explicit FanWorks legacy-link guide. Representative screenshots were visually reviewed.
 
 Moon Vagrant regression passed 25 checks with real inputs through title, comic and combat. Movement, shooting, right-mouse dash with fuel consumption, sound, fullscreen, focus-loss pause, resume, Escape, toolbar/menu Exit and failed-load retry all worked. Its page, controls and all 650 runtime assets were byte-preserved, alongside Wonder Webby and Jiangnan Water Town’s pages and corrected screenshots.
+# Visual refresh validation, 12 October 2026
+
+Installed Windows Chrome verified all seven active pages in English and Chinese at 1440, 390 and 320 pixels: 558 checks passed, with no page or HTTP errors. This covers six project links, category counts/filter keyboard navigation, language persistence, native case links and returns, menus, new-case lightboxes, no-JavaScript content and the legacy FanWorks guide.
+
+The actual Moon Vagrant runtime passed 25 gameplay checks: title, story sequence, real ship movement, bullets, dash/fuel, user-gesture audio, fullscreen, blur pause/resume, Escape, native-menu Exit, toolbar Exit, mobile notice and a blocked-asset failure/retry. No external game or website requests occurred.
+
+56 additional presentation checks passed for real GSAP setup, native anchor scrolling, visible image links, filters, repeated motion on/off cleanup, viewport changes, translated modal menus and keyboard focus restoration, theme persistence, native browser Back, OS reduced motion and complete animation-library failure fallback. A lazy-image refresh that interrupted native smooth scrolling was removed; reserved media aspect ratios avoid the unnecessary recalculation.
+
+Lab Chrome observations on localhost covered desktop/mobile and both colour schemes: LCP below 0.4 seconds, CLS below 0.01, and minimum tested main-text contrast above 6:1. These are local lab measurements, not Lighthouse scores or field performance claims. Lighthouse was unavailable because this execution environment does not provide npm/Lighthouse.
+
+All existing screenshot/media files, the 650 Moon runtime files, project data dictionaries, playable controller/styles and runtime manifest are preserved. No original engine projects or source PDFs were modified or added to the website. The refresh is prepared on a local branch; these results do not claim the new revision is deployed.

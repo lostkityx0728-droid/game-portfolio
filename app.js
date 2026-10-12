@@ -98,6 +98,7 @@
     activeCategory = category;
     try { localStorage.setItem('portfolio-category', category); } catch {}
     updateCollection();
+    document.dispatchEvent(new Event("portfolio:collection"));
     const url = new URL(location.href); url.searchParams.set('category', category);
     try { history.replaceState(null, '', url); } catch {}
   }

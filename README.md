@@ -22,6 +22,8 @@ Open index.html or serve this directory with a static server. Each page includes
 - projects-data.js: confirmed project data, categories and bilingual copy.
 - app.js: language, filtering, media controls and page accessibility.
 - experience.js: motion, menus and case transitions.
+- design.css and design-data.js: the image-led composition, shared typography, colour themes and presentation-only bilingual strings.
+- vendor/gsap/: pinned official GSAP 3.15.0 core and ScrollTrigger, copyright headers, full standard licence and source hashes. Essential content and menu navigation remain usable when these optional libraries fail to load.
 - collection.css: collection and case responsive styles.
 - assets/: selected screenshots, scene-order diagrams and existing public clips.
 
@@ -32,6 +34,12 @@ Use a fresh checkout of https://github.com/lostkityx0728-droid/game-portfolio.gi
 PUBLISH.cmd or publish.sh checks the intended account, main branch and matching origin, stages an explicit website whitelist and performs a normal push. Existing Pages settings must remain main at the repository root. No additional repository or server is required.
 
 Contact and resume fields remain blank. See SOURCES.md and ASSET-NOTICE.md for attribution, and CHECKS.md for local validation scope.
+
+## Visual refresh
+
+The homepage pairs Rong Guo's identity with real Wonder Webby gameplay. The six cases have directly visible images, an asymmetric desktop composition, and a single-column mobile layout. Project slugs, filters, source records and all contribution/scope text remain authoritative. A system-aware light/dark toggle is available.
+
+GSAP provides a short entrance timeline, one-shot ScrollTrigger reveals, reusable arrow hover tweens, menu sequencing and a 140 ms exit response before native page navigation. Scrolling and browser history are native. There are no pinned sections, decorative orbs, custom cursors or continuous WebGL rendering. Reduced motion and the existing manual motion control disable the animation setup and clean up its triggers.
 
 ## Moon Vagrant browser preview
 
