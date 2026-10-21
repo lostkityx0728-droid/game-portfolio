@@ -84,8 +84,8 @@ html[lang="zh-CN"] .opening-aside>p{font:13px/1.9 var(--sans)}html[lang="zh-CN"]
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) and (forced-colors:none){
   html[data-folio-pointer="active"]:not(:has(dialog[open],.page-curtain.active)) .folio-pointer{visibility:visible}
   html[data-folio-pointer="active"]:not(:has(dialog[open],.page-curtain.active)) :where(body,body *){cursor:none!important}
-  html[data-folio-pointer="active"] :where(input,textarea,select,[contenteditable],video,audio,iframe,canvas,dialog,dialog *,[data-game-session],[data-game-session] *,[data-cursor-native],[data-cursor-native] *,button:disabled,[aria-disabled="true"]){cursor:revert!important}
-  html:has(:is(input,textarea,select,[contenteditable],video,audio,iframe,canvas,[data-game-session],[data-cursor-native],button:disabled,[aria-disabled="true"]):hover) .folio-pointer{visibility:hidden!important}
+  html[data-folio-pointer="active"] :where(input,textarea,select,[contenteditable],video,audio,iframe,canvas:not(.trace-images > #trace-canvas[aria-hidden="true"]),dialog,dialog *,[data-game-session],[data-game-session] *,[data-cursor-native],[data-cursor-native] *,button:disabled,[aria-disabled="true"]){cursor:revert!important}
+  html:has(:is(input,textarea,select,[contenteditable],video,audio,iframe,canvas:not(.trace-images > #trace-canvas[aria-hidden="true"]),[data-game-session],[data-cursor-native],button:disabled,[aria-disabled="true"]):hover) .folio-pointer{visibility:hidden!important}
 }
 
 /* Thin, warm edge highlights use opacity/transform and leave box geometry alone. */

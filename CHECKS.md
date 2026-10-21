@@ -76,3 +76,11 @@ Prepared on a separate local branch from da810a5; not pushed or published. Layou
 - Actual rendered desktop/mobile images were inspected. A real-mouse GIF and white/dark/photo comparisons are in the private review deliverables, outside publication files.
 - Lighthouse 13.5.0 local desktop, one matched run per version: baseline performance 95, refined 95; baseline/refined CLS 0/0. These are local lab observations, not field Core Web Vitals or physical-device certification. Existing content/accessibility findings are outside this visual-interaction patch.
 - No new production dependency. Lighthouse is installed only in the private QA directory. No physical touch device, Safari, Firefox or Windows-wide cursor replacement is claimed.
+
+## Home image cursor fallback fix — 21 October 2026
+
+The homepage photograph is rendered by the aria-hidden `#trace-canvas` directly inside `.trace-images`. It was incorrectly caught by the general native-canvas fallback in both JavaScript and CSS. Only that exact decorative renderer is now exempt; interactive/unknown canvases, native controls, dialogs, iframes and the Moon session retain their native fallback.
+
+- 21 image-specific checks passed: actual home canvas hits in both languages, project-card previews, detail images and lightbox, unknown canvas, a similarly named canvas outside the image container, WebGL-disabled rendering, and Moon title/exit.
+- 57 existing pointer checks passed, including reduced motion, touch, keyboard, window/tab lifecycle, editing, iframe clicks and game-native cursor behaviour.
+- The screenshot image itself, project data, all HTML, layout and art styling are unchanged. Only the native-cursor eligibility selectors were narrowed.

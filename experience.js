@@ -187,7 +187,8 @@
   const precise = matchMedia('(hover: hover) and (pointer: fine)');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const forced = matchMedia('(forced-colors: active)');
-  const nativeArea = 'input, textarea, select, [contenteditable]:not([contenteditable="false"]), iframe, video, audio, canvas, dialog, [data-game-session], [data-cursor-native], button:disabled, [aria-disabled="true"]';
+  // Only the aria-hidden home image renderer is decorative; other canvases remain native.
+  const nativeArea = 'input, textarea, select, [contenteditable]:not([contenteditable="false"]), iframe, video, audio, canvas:not(.trace-images > #trace-canvas[aria-hidden="true"]), dialog, [data-game-session], [data-cursor-native], button:disabled, [aria-disabled="true"]';
   const editable = 'input, textarea, select, [contenteditable]:not([contenteditable="false"])';
   const action = 'a[href], button:not(:disabled), summary, [role="button"]:not([aria-disabled="true"]), [data-lightbox]';
   const overlay = document.createElement('div');
