@@ -57,3 +57,10 @@ Prepared locally on the restored portfolio style; not pushed or published.
 - Five official public-playtest originals were inspected, converted to WebP without cropping or resampling, and presented at their native aspect ratios. Actual desktop/mobile page and section screenshots were inspected in both languages.
 - Private project documents and Git records were read only to verify scoped contributions; they are not included in the public site. No current Unity/build capture was attempted because no running editor or ready local build was found.
 - JavaScript syntax, PowerShell parser, Bash syntax and Git whitespace checks passed.
+
+## Wonder Webby personal-case focus — 21 October 2026
+
+- Removed the team roster, team-size fact, teammate-responsibility block and expanded team credits from the visible case study. Reduced the general game explanation to one brief team-project background sentence.
+- Preserved the complete personal contribution copy, screenshots and their native proportions, earlier prototype archive, existing style and other cases.
+- Added the official game-detail page and desktop browser playtest at the main media and related-links section, with matching English/Chinese labels.
+- 139 focused local browser checks and 558 existing six-case checks passed. These include team-detail absence, links, translated copy, galleries, mobile layout, Moon title loading and exit.

@@ -167,7 +167,6 @@ const collection={
       "role.interaction": "I reworked camera behaviour for walls and ceilings, refined collision handling, and added contextual prompts and controller interaction improvements through iteration.",
       "fact.role.value": "Concept, gameplay & camera development",
       "case.webby.scope": "A team game in development, with a desktop browser playtest available on itch.io. These screenshots show the public playtest; the archived clips below show an earlier prototype. Neither is presented as the final build.",
-      "case.webby.credit": "The game is a shared team project. The original main-menu UI, visual direction and typography were created by Leo; environment, artwork and other systems are team contributions.",
       "case.webby.engine": "Unity 6",
       "wonderwebby.row.meta": "UNITY / TEAM PROJECT",
       "wonderwebby.row.kind": "Exploration",
@@ -370,7 +369,7 @@ const collection={
       "dragon-of-kamurocho.gallery.2": "Assembled prototype components, including cards, markers, dice and third-party play-money materials.",
       "dragon-of-kamurocho.index": "PROJECT 06 / YAKUZA — DRAGON OF KAMUROCHO",
       "project.tagline": "A small spider. A garden of paths to make.",
-      "overview.lead": "Explore as a spider, build routes with silk, and leave an artwork behind.",
+      "overview.lead": "A Unity team exploration game for IGB200 / QAGOMA, where a spider builds silk routes through a greenhouse.",
       "overview.body": "Wonder Webby is a single-player exploration game by Triple 7 Studio. In a sunlit garden and greenhouse, players shoot and anchor silk, travel along the routes they create, catch prey and carry it home to feed their spiderlings. A resident cat adds danger to the journey. Once the family is fed, the web left across the space can be revealed and preserved as an artwork.",
       "overview.inspiration": "Created for IGB200 in response to QAGOMA’s materiality brief, the team project is inspired by Sandra Selig’s Webs from my garden series 2004–05.",
       "loop.one.body": "Shoot and anchor silk to build routes through the greenhouse.",
@@ -380,7 +379,7 @@ const collection={
       "role.concept": "I helped shape the early concept and main play loop: exploration and web building support hunting and feeding, while the routes left by play become the artwork revealed at the end.",
       "role.silk": "I developed silk shooting, anchoring and traversal, alongside prey collection and feeding interactions. I integrated these mechanics with the team’s work, with teammate support on feeding.",
       "webby.play": "Play on itch.io",
-      "webby.play.note": "Official team page · desktop browser playtest · fullscreen recommended",
+      "webby.play.note": "Desktop browser playtest · in development",
       "webby.current.label": "PUBLIC PLAYTEST SCREENSHOTS",
       "webby.hero.caption": "Webby among silk paths in the greenhouse. Screenshot from the official itch.io page.",
       "webby.archive": "Earlier prototype clips",
@@ -399,7 +398,13 @@ const collection={
       "gallery.one": "Webby suspended in the greenhouse, seen at spider scale.",
       "gallery.two": "Silk routes crossing the greenhouse structure.",
       "gallery.three": "Carrying wrapped prey towards three spiderlings.",
-      "gallery.four": "Webby above the greenhouse cart, with the resident cat below."
+      "gallery.four": "Webby above the greenhouse cart, with the resident cat below.",
+      "overview.title": "The project.",
+      "webby.details": "Official game details",
+      "webby.links.nav": "Official links",
+      "webby.links.title": "Explore the game.",
+      "webby.platform.label": "PLAYTEST",
+      "webby.platform.value": "Desktop browser"
     },
     "zh": {
       "collection.all": "全部作品",
@@ -446,7 +451,6 @@ const collection={
       "role.interaction": "我重做墙壁与天花板上的相机行为，完善碰撞处理，加入情境提示，并在迭代中改进手柄交互。",
       "fact.role.value": "概念、玩法与相机开发",
       "case.webby.scope": "开发中的团队游戏，目前在 itch.io 提供桌面浏览器试玩。本页截图来自公开试玩页面，下方归档片段展示更早的原型，二者均不作为最终 build 展示。",
-      "case.webby.credit": "这是团队共同完成的游戏。原始主菜单界面、视觉方向和字体设计由 Leo 完成；环境、美术和其他系统属于团队成果。",
       "case.webby.engine": "Unity 6",
       "wonderwebby.row.meta": "UNITY / 团队项目",
       "wonderwebby.row.kind": "探索",
@@ -649,7 +653,7 @@ const collection={
       "dragon-of-kamurocho.gallery.2": "组装的原型组件，包括卡牌、标记、骰子及第三方游戏钞票材料。",
       "dragon-of-kamurocho.index": "项目 06 / Yakuza — Dragon of Kamurocho",
       "project.tagline": "一只小蜘蛛，一座由你连接的花园。",
-      "overview.lead": "以蜘蛛的视角探索，用蛛丝建立路线，让旅程留下作品。",
+      "overview.lead": "这是为 IGB200 / QAGOMA 制作的 Unity 团队探索游戏，玩家以蜘蛛的视角在温室中建立蛛丝路线。",
       "overview.body": "Wonder Webby 是 Triple 7 Studio 开发的单人探索游戏。玩家在阳光下的花园与温室中射出、固定蛛丝，沿自己建立的路线移动，捕捉并搬运猎物，带回巢中喂养幼蛛。温室中的猫让探索多了一分危险。家人吃饱后，游玩过程中留在空间中的蛛网会被揭示，并作为一件作品保存。",
       "overview.inspiration": "这是为 IGB200 制作、回应 QAGOMA「材料性」课题的团队项目，灵感来自 Sandra Selig 的《Webs from my garden series 2004–05》。",
       "loop.one.body": "射出并固定蛛丝，在温室中建立自己的移动路线。",
@@ -659,7 +663,7 @@ const collection={
       "role.concept": "我参与早期概念和主要玩法循环的设计：让探索与织网支持捕猎、返回和喂养，而游玩留下的路线最终成为被揭示的蛛网作品。",
       "role.silk": "我开发蛛丝射出、固定和沿网移动，以及猎物收集与喂食交互，并将这些机制与团队已有工作整合；喂食部分也有队友协作。",
       "webby.play": "前往 itch.io 试玩",
-      "webby.play.note": "团队官方页面 · 桌面浏览器试玩 · 建议全屏运行",
+      "webby.play.note": "桌面浏览器试玩 · 开发中",
       "webby.current.label": "公开试玩截图",
       "webby.hero.caption": "温室蛛丝路线中的 Webby，截图来自官方 itch.io 页面。",
       "webby.archive": "早期原型片段",
@@ -678,7 +682,13 @@ const collection={
       "gallery.one": "从蜘蛛的尺度，近看悬在温室中的 Webby。",
       "gallery.two": "交叠在温室结构之间的蛛丝路线。",
       "gallery.three": "携带包裹好的猎物，靠近三只幼蛛。",
-      "gallery.four": "Webby 悬在温室推车上方，猫停留在下方。"
+      "gallery.four": "Webby 悬在温室推车上方，猫停留在下方。",
+      "overview.title": "项目背景。",
+      "webby.details": "官方游戏详情",
+      "webby.links.nav": "相关链接",
+      "webby.links.title": "了解并体验游戏。",
+      "webby.platform.label": "试玩平台",
+      "webby.platform.value": "桌面浏览器"
     }
   }
 };
