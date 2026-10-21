@@ -45,3 +45,15 @@ The owner-supplied PortfolioG directory contains three project PDFs. These were 
 Local Chrome validation passed 558 assertions over 42 combinations: home plus all six cases, at 1440, 390 and 320 px in English and Chinese. Checked loaded images, native links, category counts (6/3/2/1/2), filters, keyboard navigation, case links, language and category persistence, new galleries and captions, menu/Escape, reduced motion, normal motion transitions, static English with JavaScript disabled and the explicit FanWorks legacy-link guide. Representative screenshots were visually reviewed.
 
 Moon Vagrant regression passed 25 checks with real inputs through title, comic and combat. Movement, shooting, right-mouse dash with fuel consumption, sound, fullscreen, focus-loss pause, resume, Escape, toolbar/menu Exit and failed-load retry all worked. Its page, controls and all 650 runtime assets were byte-preserved, alongside Wonder Webby and Jiangnan Water Town’s pages and corrected screenshots.
+
+## Wonder Webby content update — 21 October 2026
+
+Prepared locally on the restored portfolio style; not pushed or published.
+
+- 176 focused checks passed across English/Chinese and 1440/390/320 px: full image proportions, translated captions and alt text, lightbox source and keyboard focus, official external itch.io link, current/earlier version labels, archived clip keyboard switching and real video playback, static English fallback, existing menu and motion toggle.
+- 558 existing six-case checks passed across 42 page/width/language combinations, including categories, navigation, translations and the other cases’ galleries.
+- The unchanged Moon Vagrant browser preview was loaded to its real title scene and exited; the 650 runtime files remain byte-identical. A new full combat playthrough was not needed for this content-only change.
+- The other five case HTML files and their used translation values remain unchanged. Global styles, interaction scripts, the home introduction and existing clip files are unchanged. Only the shared Wonder Webby thumbnail changes within the existing common UI.
+- Five official public-playtest originals were inspected, converted to WebP without cropping or resampling, and presented at their native aspect ratios. Actual desktop/mobile page and section screenshots were inspected in both languages.
+- Private project documents and Git records were read only to verify scoped contributions; they are not included in the public site. No current Unity/build capture was attempted because no running editor or ready local build was found.
+- JavaScript syntax, PowerShell parser, Bash syntax and Git whitespace checks passed.
