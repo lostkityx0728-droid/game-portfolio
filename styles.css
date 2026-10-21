@@ -70,3 +70,37 @@ html[lang="zh-CN"] .opening-aside>p{font:13px/1.9 var(--sans)}html[lang="zh-CN"]
 .case-study .project-title-row h1{font-size:clamp(76px,12vw,190px)}
 @media(min-width:561px) and (max-width:850px){.case-study .project-title-row h1{font-size:11.2vw}}
 @media(max-width:560px){.case-study .project-title-row h1{font-size:20vw;letter-spacing:-.05em}}
+
+
+/* Pointer polish. Fixed overlay sits above site chrome; native modal UI wins. */
+.cursor-label{display:none!important}
+.folio-pointer{position:fixed;inset:0;z-index:60;pointer-events:none;visibility:hidden;contain:layout style;overflow:clip;--point-scale:1}
+.folio-pointer-dot,.folio-pointer-tail{position:absolute;left:0;top:0;pointer-events:none;will-change:transform}
+.folio-pointer-face{display:block;width:9px;height:9px;border:1.5px solid #171b17;border-radius:50%;background:#f7f2e6;transform:translate(-50%,-50%) scale(var(--point-scale));transition:transform 140ms cubic-bezier(.2,.7,.2,1)}
+.folio-pointer-tail{width:3.5px;height:3.5px;border:.8px solid #171b17;border-radius:50%;background:#f7f2e6;margin:-1.75px 0 0 -1.75px;opacity:0}
+.folio-pointer.is-action{--point-scale:1.45}
+.folio-pointer.is-pressed{--point-scale:.7}
+
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) and (forced-colors:none){
+  html[data-folio-pointer="active"]:not(:has(dialog[open],.page-curtain.active)) .folio-pointer{visibility:visible}
+  html[data-folio-pointer="active"]:not(:has(dialog[open],.page-curtain.active)) :where(body,body *){cursor:none!important}
+  html[data-folio-pointer="active"] :where(input,textarea,select,[contenteditable],video,audio,iframe,canvas,dialog,dialog *,[data-game-session],[data-game-session] *,[data-cursor-native],[data-cursor-native] *,button:disabled,[aria-disabled="true"]){cursor:revert!important}
+  html:has(:is(input,textarea,select,[contenteditable],video,audio,iframe,canvas,[data-game-session],[data-cursor-native],button:disabled,[aria-disabled="true"]):hover) .folio-pointer{visibility:hidden!important}
+}
+
+/* Thin, warm edge highlights use opacity/transform and leave box geometry alone. */
+.index-row::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:1px;background:#d9d2bd;opacity:0;transform:scaleX(.12);transform-origin:left;pointer-events:none;transition:transform 260ms var(--ease),opacity 180ms ease}
+.gallery-image::after{content:"";position:absolute;inset:1px;border:1px solid #efe5cba6;box-shadow:inset 0 0 0 1px #171b1759;pointer-events:none;opacity:0;transition:opacity 180ms ease}
+@media(hover:hover) and (pointer:fine){
+  .index-row:hover::after{opacity:.72;transform:scaleX(1)}
+  .gallery-image:hover::after{opacity:1}
+}
+.index-row:focus-visible::after{opacity:.9;transform:scaleX(1)}
+.gallery-image:focus-visible::after{opacity:1}
+body :is(a,button,summary,input,textarea,select,[tabindex]):focus-visible{outline:2px solid #f7f2e6;outline-offset:4px;box-shadow:0 0 0 3px #171b17}
+@media(prefers-reduced-motion:reduce){.folio-pointer{display:none!important}.index-row::after,.gallery-image::after{transition:none}}
+html[data-motion="off"] .index-row::after,html[data-motion="off"] .gallery-image::after{transition:none}
+@media(forced-colors:active){
+  .folio-pointer{display:none!important}
+  body :is(a,button,summary,input,textarea,select,[tabindex]):focus-visible{outline:2px solid Highlight;box-shadow:none}
+}

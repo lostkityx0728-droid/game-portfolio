@@ -64,3 +64,15 @@ Prepared locally on the restored portfolio style; not pushed or published.
 - Preserved the complete personal contribution copy, screenshots and their native proportions, earlier prototype archive, existing style and other cases.
 - Added the official game-detail page and desktop browser playtest at the main media and related-links section, with matching English/Chinese labels.
 - 139 focused local browser checks and 558 existing six-case checks passed. These include team-detail absence, links, translated copy, galleries, mobile layout, Moon title loading and exit.
+
+## Local cursor and edge refinement — 21 October 2026
+
+Prepared on a separate local branch from da810a5; not pushed or published. Layout, text, images and project data are retained.
+
+- 57 pointer checks passed in installed Chrome: exact-position dual-tone dot, bounded short afterimage, no idle pointer redraw, clickable/pressed states, high-contrast focus, editing/iframe/game fallbacks, window leave/blur, real tab focus changes with Playwright focus emulation disabled, visibility events, reduced motion/site motion off, forced colours, light/dark OS settings, white/dark/photo surfaces, touchscreen emulation, navigation and browser Back.
+- 558 existing six-case assertions passed across 42 page/width/language combinations.
+- 25 real Moon Vagrant assertions passed with normal page motion: title/comic/combat, mouse movement, shooting, dash/fuel, audio, fullscreen, blur pause/resume, all exit paths, mobile limitations and failed-asset retry. Its 650 runtime files are unchanged.
+- Cursor motion produced no layout shift in the targeted check. The pointer ticker stops after its short tail settles; static case pages no longer inherit the old always-running cursor/page loop. The existing home canvas continues only while its scene is visible and page motion is enabled.
+- Actual rendered desktop/mobile images were inspected. A real-mouse GIF and white/dark/photo comparisons are in the private review deliverables, outside publication files.
+- Lighthouse 13.5.0 local desktop, one matched run per version: baseline performance 95, refined 95; baseline/refined CLS 0/0. These are local lab observations, not field Core Web Vitals or physical-device certification. Existing content/accessibility findings are outside this visual-interaction patch.
+- No new production dependency. Lighthouse is installed only in the private QA directory. No physical touch device, Safari, Firefox or Windows-wide cursor replacement is claimed.
