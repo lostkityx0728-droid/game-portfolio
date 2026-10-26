@@ -116,3 +116,16 @@ NOT RUN for this iteration: mobile/touch visual execution, reduced-motion/site-m
 Independent checks: JavaScript syntax; original text/translation keys/link targets; local referenced files; all asset/game preservation; exact pointer-code preservation; official GSAP SHA-256 provenance; no wheel/touchmove cancellation. See audit/p3r-study/static-qa.json. SVG text may use Windows CRLF; game/binary bytes remain exact.
 
 Preview: http://127.0.0.1:4212/game-portfolio/ . Existing original preview server remained running during recovery. A separate HTTP health probe was blocked by the shell sandbox's socket access; it was not retried with new permissions. No browser approval was requested during recovery.
+
+
+## Handwritten text study / 2026-10-26 / LOCAL ONLY
+
+Base d2c31cf; branch design/handwritten-type. No push or publication. See design/HANDTYPE-STUDY.md for exact font sources, derivative names, byte budget and limits.
+
+895 static/preservation checks passed, including semantic text/bilingual/link preservation and all 650 Moon files. Original and generated font cmap checks passed for 54 required Latin/punctuation and 251 CJK characters. Actual font metrics passed 24 project-word and 36 case-title line checks. A real glyph specimen was viewed; it is not a browser screenshot. JavaScript syntax passed. No new full runtime pass counts or Lighthouse scores apply.
+
+Implemented text motion uses continuous semantic headings/phrases, low-distance entrances and three-group scroll emphasis. Default CSS never hides essential text. Reduced-motion/site-motion-off/forced-color/page lifecycle reversion exists in source. Duplicate legacy heading animation and per-character splitting are avoided.
+
+Preview process: http://127.0.0.1:4213/game-portfolio/ . HTTP read timed out; same-port restart returned EADDRINUSE while the original process remained alive. Automatic browser testing was not attempted because the previous full DevTools approval loop must not be repeated or bypassed. No new browser setting or permission request occurred.
+
+UNVERIFIED: actual browser typography/layout and font-loading behavior, mobile/touch, live text timing, accessibility interaction, reduced-motion and site-toggle execution, Moon/menu/lightbox integrations, CLS/performance. Previous P3R rapid-navigation limitations also remain. The source-level font measurements do not replace these checks. Fonts use optional loading and preloads; no measured no-shift claim is made.

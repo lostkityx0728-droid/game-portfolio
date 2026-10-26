@@ -28,6 +28,7 @@
   reduce.addEventListener('change',applyMotion);
   root.classList.add('experience-enhanced','motion-ready');
   function splitText(){
+    if(root.classList.contains('folio-handtype'))return;
     const nodes=$$('.statement h2 [data-i18n], .index-head h2[data-split]');
     nodes.forEach(el=>{
       const original=el.textContent;el.textContent='';

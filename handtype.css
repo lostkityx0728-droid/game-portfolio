@@ -1,0 +1,82 @@
+/* BEGIN GENERATED WEB FONT FACES */
+@font-face{font-family:'Folio Note Latin';src:url('fonts/handtype/latin.woff2') format('woff2');font-weight:400;font-style:normal;font-display:optional;unicode-range:U+20-7E,U+A0-107,U+10C-113,U+116-11B,U+11E-11F,U+122-123,U+12A-12B,U+12E-131,U+136-137,U+139-13E,U+141-148,U+14C-14D,U+150-15B,U+15E-165,U+16A-16B,U+16E-173,U+178-17E,U+192,U+218-21B,U+2019}
+@font-face{font-family:'Folio Note Han';src:url('fonts/handtype/han.woff2') format('woff2');font-weight:400;font-style:normal;font-display:optional;unicode-range:U+3001-3002,U+4E00,U+4E0B,U+4E0D-4E0E,U+4E16,U+4E1D,U+4E24,U+4E2A,U+4E2D,U+4E34,U+4E3A,U+4E48,U+4E4B,U+4E4E,U+4E5F,U+4E86,U+4E8B,U+4E8E,U+4E92,U+4EA4,U+4EC0,U+4ECD-4ECE,U+4EE5,U+4EEA,U+4F1A,U+4F53,U+4F5C,U+4FEF,U+5148-5149,U+5165,U+5173,U+5176,U+517C,U+5185,U+518D,U+51B3,U+51FB,U+5207,U+5212,U+5217,U+5219,U+5230,U+5236,U+524D,U+529B,U+52A8,U+5316,U+533A,U+538B,U+539F,U+53D1,U+53D7,U+53D9,U+53EA,U+53EF,U+5408,U+5411,U+5448,U+54C1,U+5582,U+56DE,U+56FE,U+5728,U+5730,U+573A,U+575B,U+578B,U+5851,U+5883,U+589F,U+5904,U+5934,U+59CB,U+5B58,U+5B9E,U+5BA4,U+5BDF,U+5BFB-5BFC,U+5C04,U+5C40,U+5CB8,U+5DEE,U+5E03,U+5E76,U+5E8F,U+5E94,U+5E9F,U+5EFA,U+5F00,U+5F0F,U+5F15,U+5F7C,U+5F84,U+5FAA,U+5FC3,U+5FF5,U+60F3,U+611F,U+61C2,U+620F-6211,U+6218,U+627E,U+628A,U+6295,U+62E9,U+6355,U+63A2,U+63A5,U+63A7,U+642D,U+64CD,U+6536,U+6545,U+6574,U+6597,U+6599,U+65B0,U+65B9,U+65E9,U+65F6,U+662F,U+666F,U+671F,U+673A,U+6743,U+6765,U+6784,U+6807,U+6838,U+684C,U+6982,U+6B21,U+6B64,U+6BB5,U+6BCF,U+6C42,U+6CD5,U+6D2A,U+6D41,U+6D4E,U+6E29,U+6E38,U+707E,U+70B9,U+7247,U+730E,U+73A9,U+73AF-73B0,U+7406,U+751F,U+754C,U+7559,U+75D5,U+767D,U+7684,U+76D2,U+76EE,U+76F8,U+770B,U+771F,U+796D,U+79CD,U+79EF,U+79FB,U+7A0B,U+7A7A,U+7AD9,U+7AE0,U+7B56,U+7BA1,U+7CFB,U+7D22,U+7D2F,U+7EBF,U+7EC4,U+7EC7,U+7ECF,U+7ED3,U+7EDF,U+7EE7,U+7EED,U+7F51,U+7F6E,U+804A,U+8054,U+80CC,U+822A,U+8282,U+8349,U+86DB,U+884C,U+8857,U+89C1-89C2,U+89C4,U+89C6,U+89C9,U+89D2,U+89E3,U+8BA9,U+8BBE,U+8BD5,U+8BFB,U+8D44,U+8D70,U+8D77,U+8DDF,U+8DEF,U+8EAB,U+8F6C,U+8F91,U+8FC7,U+8FD9,U+8FDB,U+8FDE,U+8FF9,U+9009,U+9020,U+903B,U+907F,U+90FD,U+91CD,U+91D1,U+955C,U+95E8,U+95EA,U+95F4,U+9605,U+9636,U+9648,U+9669,U+968F,U+96C6,U+9762,U+9875,U+9879,U+9886,U+98CE,U+98DF,U+9996,U+9A8C,U+9AD8,U+FF0C}
+/* END GENERATED WEB FONT FACES */
+/* Self-hosted display fonts: see fonts/handtype/SOURCE.json and both OFL files.
+   Optional loading avoids a late webfont swap; all essential text stays visible. */
+html.folio-handtype{--hand:'Folio Note Latin','Folio Note Han','KaiTi','STKaiti','Segoe Print',cursive;--game-label:'Cascadia Mono',Consolas,var(--sans)}
+html.folio-handtype :is(.traces-heading h2,.trace-chapter h3,.index-head h2,.index-project-name,.project-title-row h1,.project-section h2,.contribution-section h2,.role-grid h3,.gallery-heading h2,.statement h2,.contact-main h2){font-family:var(--hand);font-weight:400;font-style:normal;letter-spacing:-.012em;text-wrap:pretty}
+html.folio-handtype :is(.index-project-name,.trace-chapter h3,.statement h2,.contact-main h2) em{font-style:normal}
+html.folio-cinema.folio-handtype .home-intro h1{font-family:var(--hand);font-size:clamp(100px,12.5vw,176px);font-weight:400;line-height:1.02;letter-spacing:-.035em;text-shadow:none}
+html.folio-handtype .home-intro h1>[data-name-first],html.folio-handtype .home-intro h1>em{display:block}
+html.folio-handtype .home-intro h1>em{position:relative;width:fit-content;margin-top:0;font-style:normal;--ink-scale:1}
+html.folio-handtype .home-intro h1>em::after{content:"";position:absolute;left:4%;bottom:.02em;width:82%;height:1px;background:currentColor;opacity:.65;transform:rotate(-2deg) scaleX(var(--ink-scale));transform-origin:left;pointer-events:none}
+html.folio-handtype .home-intro-heading{gap:30px}
+html.folio-handtype .home-intro-copy{margin-top:28px}
+html.folio-cinema.folio-handtype .home-intro .home-intro-copy>p{font-family:var(--sans);font-size:15px;line-height:1.8;max-width:31ch;font-weight:400}
+html.folio-handtype :is(.eyebrow,.index-number,.index-sub,.project-facts dt,.trace-index,.trace-timeline>button,.folio-reel-controls){font-family:var(--game-label);font-weight:400;font-variant-numeric:tabular-nums}
+html.folio-handtype .eyebrow{letter-spacing:.08em;line-height:1.8}
+html.folio-handtype .traces-heading h2{font-size:clamp(36px,3.9vw,58px);line-height:1.2}
+html.folio-handtype .trace-chapter h3{font-size:clamp(34px,3.5vw,53px);line-height:1.18}
+html.folio-handtype .trace-chapter h3>em{font-style:normal}
+html.folio-cinema.folio-handtype .index-head h2{font-size:clamp(38px,4.3vw,62px);line-height:1.15;letter-spacing:-.02em}
+html.folio-handtype .is-reel-pinned .index-head h2{max-width:none}
+html.folio-cinema.folio-handtype .index-project-name{font-size:clamp(32px,3.6vw,56px);line-height:1.16;letter-spacing:-.016em}
+html.folio-handtype .index-sub{font-size:10px;letter-spacing:.035em;line-height:1.8}
+html.folio-handtype .index-main{gap:10px}
+html.folio-cinema.folio-handtype .project-title-row h1{font-size:clamp(64px,7.8vw,112px);line-height:1.1;letter-spacing:-.035em;overflow-wrap:normal}
+html.folio-handtype .project-title-row h1>span+span{font-style:normal;margin-top:0}
+html.folio-handtype .project-lead{font-family:var(--sans);font-size:20px;line-height:1.65;letter-spacing:0;max-width:28ch}
+html.folio-handtype .project-facts{gap:28px}
+html.folio-handtype .project-facts dt{font-size:10px;line-height:1.8;margin-bottom:12px}
+html.folio-handtype .project-facts dd{font-family:var(--sans);font-size:13px;line-height:1.8}
+html.folio-handtype :is(.project-section h2,.contribution-section h2,.gallery-heading h2){font-size:clamp(34px,3.8vw,54px);line-height:1.2;max-width:24ch;margin-bottom:26px}
+html.folio-handtype .project-section>.lead{font-family:var(--sans);font-size:20px;line-height:1.75;letter-spacing:0;max-width:55ch}
+html.folio-handtype .role-grid h3{font-size:26px;line-height:1.3;letter-spacing:-.015em}
+html.folio-handtype .role-grid p,html.folio-handtype .role-copy{font-family:var(--sans);line-height:1.95}
+html.folio-handtype .statement h2{font-size:clamp(56px,7.2vw,112px);line-height:1.18;letter-spacing:-.025em;max-width:19ch}
+html.folio-handtype .statement h2>em{margin-left:5%;font-style:normal}
+html.folio-handtype .contact-main h2{font-size:clamp(56px,7.8vw,120px);line-height:1.14;letter-spacing:-.02em}
+html.folio-handtype .contact-main h2>em{font-style:normal;margin-left:7%}
+html.folio-handtype .footer-signature{font-family:var(--sans);font-weight:400;letter-spacing:-.065em}
+/* Continuous semantic phrases are animated as groups, never per character. */
+html.folio-handtype :is(h1,h2,h3){font-synthesis:none}
+html.folio-handtype .statement h2>[data-i18n]{opacity:1}
+html.folio-handtype[lang="zh-CN"] :is(.traces-heading h2,.trace-chapter h3,.index-head h2,.project-section h2,.contribution-section h2,.gallery-heading h2,.statement h2,.contact-main h2){font-family:var(--hand);font-style:normal;letter-spacing:.015em;line-height:1.45}
+html.folio-handtype[lang="zh-CN"] .trace-chapter h3>em{margin-left:0}
+html.folio-handtype[lang="zh-CN"] .traces-heading h2{font-size:clamp(30px,3.4vw,50px)}
+html.folio-handtype[lang="zh-CN"] .trace-chapter h3{font-size:clamp(30px,3.1vw,46px)}
+html.folio-handtype[lang="zh-CN"] :is(.project-section h2,.contribution-section h2,.gallery-heading h2){font-size:clamp(30px,3.2vw,46px);line-height:1.5}
+html.folio-handtype[lang="zh-CN"] .role-grid h3{font-family:var(--hand);font-size:24px;line-height:1.5}
+html.folio-handtype[lang="zh-CN"] .project-lead{font-family:var(--sans);font-size:17px;line-height:1.9}
+html.folio-handtype[lang="zh-CN"] .project-section>.lead{font-family:var(--sans);font-size:18px;line-height:1.9}
+@media(max-width:1100px) and (min-width:561px){html.folio-cinema.folio-handtype .project-title-row h1{font-size:clamp(54px,7.4vw,80px)}html.folio-cinema.folio-handtype .index-project-name{font-size:34px}}
+@media(max-width:760px){
+ html.folio-handtype .project-title-row{grid-template-columns:minmax(0,1fr);gap:24px;align-items:start}
+ html.folio-handtype .project-title-row>div{margin-top:0;max-width:36ch}
+ html.folio-cinema.folio-handtype .home-intro h1{font-size:clamp(72px,22vw,124px);line-height:1.02}
+ html.folio-handtype .home-intro h1>[data-name-first],html.folio-handtype .home-intro h1>em{display:block}
+ html.folio-handtype .home-intro-copy{margin-top:22px}
+ html.folio-handtype .home-intro .home-intro-copy>p{font-size:14px;line-height:1.8}
+ html.folio-cinema.folio-handtype .index-head h2{font-size:42px;line-height:1.18;max-width:17ch}
+ html.folio-cinema.folio-handtype .index-project-name{font-size:clamp(30px,8.5vw,42px);line-height:1.18}
+ html.folio-handtype .index-sub{font-size:9px}
+ html.folio-handtype .trace-chapter h3{font-size:36px}
+ html.folio-handtype :is(.project-section h2,.contribution-section h2,.gallery-heading h2){font-size:34px;line-height:1.3}
+ html.folio-handtype .role-grid h3{font-size:25px;line-height:1.35}
+ html.folio-handtype .project-section>.lead{font-size:18px;line-height:1.8}
+ html.folio-handtype .statement h2{font-size:clamp(40px,10vw,70px);line-height:1.28;max-width:20ch}
+ html.folio-handtype .statement h2>em{margin-left:4%}
+ html.folio-handtype .contact-main h2{font-size:clamp(46px,12vw,76px);line-height:1.2}
+ html.folio-handtype .contact-main h2>em{margin-left:4%}
+ html.folio-handtype[lang="zh-CN"] .index-head h2{font-size:35px;line-height:1.5}
+ html.folio-handtype[lang="zh-CN"] :is(.traces-heading h2,.trace-chapter h3){font-size:30px;line-height:1.5}
+ html.folio-handtype[lang="zh-CN"] :is(.project-section h2,.contribution-section h2,.gallery-heading h2){font-size:29px;line-height:1.5}
+ html.folio-handtype[lang="zh-CN"] .role-grid h3{font-size:22px;line-height:1.5}
+ html.folio-handtype[lang="zh-CN"] .statement h2{font-size:clamp(30px,7.6vw,48px);line-height:1.65}
+ html.folio-handtype[lang="zh-CN"] .contact-main h2{font-size:clamp(38px,10vw,64px);line-height:1.5}
+}
+@media(max-width:560px){html.folio-cinema.folio-handtype .project-title-row h1{font-size:clamp(40px,13.2vw,74px);line-height:1.18;letter-spacing:-.025em}html.folio-handtype .project-lead{font-size:18px;line-height:1.8}}
+@media(prefers-reduced-motion:reduce){html.folio-handtype .home-intro h1>em{--ink-scale:1!important}html.folio-handtype .home-intro h1>em::after{transform:none}}
+html.folio-handtype[data-motion="off"] .home-intro h1>em{--ink-scale:1!important}
+@media(forced-colors:active){html.folio-handtype .home-intro h1>em::after{background:CanvasText}}

@@ -50,7 +50,7 @@
     gsap.fromTo(art.querySelector('img'),{scale:1.08},{scale:1,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
    }
    // Never hide essential content: subtle image movement and opacity keep links readable.
-   document.querySelectorAll('.trace-stills,.project-section h2,.gallery-grid>figure,.role-grid>div').forEach(el=>{
+   document.querySelectorAll('.trace-stills,.gallery-grid>figure,.role-grid>div').forEach(el=>{
     gsap.from(el,{y:30,opacity:.65,duration:.75,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}});
    });
   });

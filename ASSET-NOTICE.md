@@ -18,3 +18,8 @@ Wonder Webby content update (21 October 2026): five current public-playtest scre
 ### P3R motion study dependencies
 
 GSAP 3.15.0 core and ScrollTrigger are self-hosted in `vendor/gsap/`, reused from the previously verified official GreenSock download at commit `13e2b790546426a1a2e0e9b409f3f8dc6d6611f2`. SHA-256 values and source URLs are in `SOURCE.json`; the GSAP standard license is included as `LICENSE.txt`. No Persona/Atlus/Sega graphics, characters, logos, fonts, music, code bundle or video were copied. The official P3R site was a motion/visual reference only; adaptation notes are in `design/P3R-STUDY.md`.
+
+
+### Handwritten typography study
+
+Kalam Regular (Indian Type Foundry / official google/fonts source) and LXGW WenKai Lite Regular (LXGW and Klee Project authors) are used under SIL OFL 1.1. Their web-only WOFF2 subsets are renamed Folio Note Latin and Folio Note Han. Complete licenses, source commits, SHA-256 hashes and derivative details are in fonts/handtype/. The font source TTFs were not installed into the operating system or copied into the website. The Chinese subset covers the current 251 required heading characters/punctuation and falls back for other glyphs; it is not advertised as a complete CJK font. Both the original copyright and OFL distribution requirements remain in force.
