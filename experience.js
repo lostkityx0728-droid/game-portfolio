@@ -79,7 +79,7 @@
         }
       }else visuals?.pause();
     }else visuals?.pause();
-    if(home&&traces){
+    if(home&&traces&&!root.classList.contains('folio-cinema')){
       const r=traces.getBoundingClientRect(),target=motion?clamp((-r.top/Math.max(1,traces.offsetHeight-innerHeight))*2.6-.25,0,2):phase;
       phase=forced?target:lerp(phase,target,.16);
       if(r.bottom>0&&r.top<innerHeight){
@@ -112,8 +112,8 @@
   // Accessible scene controls mirror the scroll timeline, without capturing wheel or touch events.
   seeks.forEach(b=>b.addEventListener('click',()=>{
     const index=Number(b.dataset.seek);
-    if(motion){const start=traces.getBoundingClientRect().top+scrollY;const progress=(index+.25)/2.6;scrollTo({top:start+Math.max(0,traces.offsetHeight-innerHeight)*progress,behavior:'smooth'});}
-    else{phase=index;chapters[index].scrollIntoView({block:'center',behavior:'instant'});draw(performance.now(),true);}
+    if(motion&&!root.classList.contains('folio-cinema')){const start=traces.getBoundingClientRect().top+scrollY;const progress=(index+.25)/2.6;scrollTo({top:start+Math.max(0,traces.offsetHeight-innerHeight)*progress,behavior:'smooth'});}
+    else{phase=index;chapters[index].scrollIntoView({block:'center',behavior:motion?'smooth':'instant'});draw(performance.now(),true);}
   }));
   $('[data-journey-start]')?.addEventListener('click',e=>{if(!motion)return;e.preventDefault();const start=exp.getBoundingClientRect().top+scrollY;scrollTo({top:start+(exp.offsetHeight-innerHeight)*.72,behavior:'smooth'});});
   // A curved, two-phase curtain shared by menu and page navigation.

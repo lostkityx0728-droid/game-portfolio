@@ -1,0 +1,21 @@
+{
+  "package": "gsap",
+  "version": "3.15.0",
+  "commit": "13e2b790546426a1a2e0e9b409f3f8dc6d6611f2",
+  "license": "GSAP standard no-charge license",
+  "licenseURL": "https://gsap.com/community/standard-license/",
+  "files": [
+    {
+      "file": "vendor/gsap/gsap.min.js",
+      "source": "https://raw.githubusercontent.com/greensock/GSAP/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/gsap.min.js",
+      "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+      "bytes": 72927
+    },
+    {
+      "file": "vendor/gsap/ScrollTrigger.min.js",
+      "source": "https://raw.githubusercontent.com/greensock/GSAP/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/ScrollTrigger.min.js",
+      "sha256": "b0b14d67b55b0c43c756ac0b106cfcb09d0879945f6ead64451065b0672916a2",
+      "bytes": 44575
+    }
+  ]
+}

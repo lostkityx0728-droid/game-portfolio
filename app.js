@@ -92,6 +92,7 @@
     const status = $('#collection-count');
     if (status) status.textContent = t(count === 1 ? 'collection.count.one' : 'collection.count.many').replace('{count}', count);
     const empty = $('.collection-empty'); if (empty) empty.hidden = count > 0;
+    document.dispatchEvent(new Event('portfolio:collection'));
   }
   function selectCategory(category) {
     if (!categories.includes(category)) return;

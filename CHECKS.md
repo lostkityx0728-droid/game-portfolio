@@ -97,3 +97,22 @@ Base: a339915cec770e97f0ec2a69c8f7be1c32791638. Local-only branch `design/refere
 - Desktop Lighthouse on Wonder Webby: baseline and refined both performance 95 / accessibility 96; CLS 0 / TBT 0; LCP about 1.51s each. These are local laboratory observations, not production field metrics. Existing audit findings remain; no claim of full WCAG conformance.
 - Keep original HTML, bilingual copy/data, image/video assets, official project/itch links, Moon runtime and custom pointer implementation. Verify exact Git content preservation before approval.
 - QA scripts, raw reports and full screenshots are in the parent workspace under `audit/reference-refinement`; review comparison sheets and report under `deliverables/reference-refinement`. Local preview: http://127.0.0.1:4211/game-portfolio/ .
+
+
+## P3R motion study / 2026-10-26 / PARTIALLY VERIFIED LOCAL DRAFT
+
+Base: 65659fc64fe29a19e8a70aa8b684647b32ed78ca. Branch: design/p3r-scroll-study. No push/deployment. Earlier pass counts and Lighthouse scores above apply to earlier versions, not this motion study.
+
+Implemented: existing-asset layered hero, compact vertical three-moment interlude, content-width GSAP horizontal six-project chapter on large precise-pointer screens, native scroll with previous/next and keyboard controls, project-color changes, category rebuilds, bilingual control labels, paper/ink transition treatment, case-study contribution treatment. Existing text, links, game files and exact custom pointer code are preserved.
+
+Actually exercised in the user's Edge: P3R reference scrolling forward/back, character detail open/close; local 2040px/1440px desktop hero; all six project steps through the last image; wheel exit/re-entry/reverse; two-project level filter and controls; arrow keys with visible focus; live English/Chinese; repeated menu open/Escape close and scroll-lock release; project-detail route loading. Screenshots are saved in audit/p3r-study. Runtime assertions were recorded in the task conversation; the browser kernel exited before their in-memory log could be exported.
+
+The initial repeated-filter rebuild that interrupted an in-page anchor was fixed and the hero-to-project anchor subsequently worked. A guard was added to stop restored card focus seeking the reel during a dialog/curtain; this final guard still needs browser retesting. After a rapid menu-close/filter sequence, a project detail opened unexpectedly. Fresh page/scroll-position verification of this sequence and breadcrumb #games positioning remains pending; do not assume fully verified navigation.
+
+Blocked operation: browser CDP Emulation.setEmulatedMedia for prefers-reduced-motion=reduce and prefers-color-scheme=light at 127.0.0.1:4212. The user reported repeated full Developer Tools permission prompts despite allowing them. The tool waited and the kernel exited. Completion/settings are uncertain; no repeat or alternate browser-control route was used after the block. The 1440x900 viewport override was applied earlier and its reset could not be confirmed after interruption.
+
+NOT RUN for this iteration: mobile/touch visual execution, reduced-motion/site-motion-off runtime fallback, forced-colors/light-dark regression, current-build Moon gameplay entry/exit/fullscreen, full gallery-lightbox regression, final rapid-navigation regression, Lighthouse/performance comparison. These source-level fallbacks exist but require runtime validation. Do not publish until these checks and the file-list deployment preparation are completed and the user gives fresh approval.
+
+Independent checks: JavaScript syntax; original text/translation keys/link targets; local referenced files; all asset/game preservation; exact pointer-code preservation; official GSAP SHA-256 provenance; no wheel/touchmove cancellation. See audit/p3r-study/static-qa.json. SVG text may use Windows CRLF; game/binary bytes remain exact.
+
+Preview: http://127.0.0.1:4212/game-portfolio/ . Existing original preview server remained running during recovery. A separate HTTP health probe was blocked by the shell sandbox's socket access; it was not retried with new permissions. No browser approval was requested during recovery.
