@@ -1,0 +1,12 @@
+{
+  "source": "fonts/handtype/SOURCE.json",
+  "sourceSha256": "f799a538a3355877e597a0ae04050e897932c9ae7689eb9227c2953c5dd549ea",
+  "family": "Folio Text Han",
+  "file": "fonts/handtype/body-han.woff2",
+  "bytes": 170668,
+  "sha256": "0d639db14c8da82855293bff6dc97b1e00e57b9c329e4a695590ad551f1c5785",
+  "requiredCharacters": 770,
+  "missingCharacters": [],
+  "modification": "Web-only WOFF2 subset and neutral primary family rename. Original OFL and copyright retained; see wenkai-OFL.txt.",
+  "latin": "Existing Kalam subset, unchanged. Latin font does not cover Chinese."
+}

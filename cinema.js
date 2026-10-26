@@ -47,7 +47,7 @@
    const art=document.querySelector('.folio-hero-art'),hero=document.querySelector('.home-intro');
    if(art&&hero){
     gsap.fromTo(art,{y:0},{y:75,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
-    gsap.fromTo(art.querySelector('img'),{scale:1.08},{scale:1,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
+    gsap.fromTo(art.querySelectorAll('img'),{scale:1.08},{scale:1,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
    }
    // Never hide essential content: subtle image movement and opacity keep links readable.
    document.querySelectorAll('.trace-stills,.gallery-grid>figure,.role-grid>div').forEach(el=>{
