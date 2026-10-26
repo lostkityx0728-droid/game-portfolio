@@ -84,3 +84,16 @@ The homepage photograph is rendered by the aria-hidden `#trace-canvas` directly 
 - 21 image-specific checks passed: actual home canvas hits in both languages, project-card previews, detail images and lightbox, unknown canvas, a similarly named canvas outside the image container, WebGL-disabled rendering, and Moon title/exit.
 - 57 existing pointer checks passed, including reduced motion, touch, keyboard, window/tab lifecycle, editing, iframe clicks and game-native cursor behaviour.
 - The screenshot image itself, project data, all HTML, layout and art styling are unchanged. Only the native-cursor eligibility selectors were narrowed.
+
+
+## Local reference refinement / 2026-10-26
+
+Base: a339915cec770e97f0ec2a69c8f7be1c32791638. Local-only branch `design/reference-refinement`; no push or deployment.
+
+- Reviewed VoltAgent/awesome-design-md at 3b605329240ce735b510037cca322f1831fdd7f8. It is a DESIGN.md collection, not a skill installer. Added two inert, MIT-licensed reference documents with source notes. No CLI, scripts, fonts or runtime dependencies installed.
+- Preserved existing identity and layout. Improved metadata/body/caption scale, index rhythm and 44px touch targets. Anchored smaller image previews via CSS, keeping project names/types clear. Limited hover movement to 8px and disabled transitions with reduced motion/site motion off. Small screens retain native project links without floating previews.
+- Existing collection regression: 558 assertions over 42 page/width/language combinations. Pointer/menu/lightbox/accessibility behavior: 57. Homepage decorative-canvas pointer regression: 21. Real Moon game: 25 (move/shoot/dash/fullscreen/pause/exit/retry). Added refinement checks: 72 over 320/390/768/1024/1440/1920px, both languages, touch/keyboard and reduced motion.
+- Actual Chrome screenshots: desktop 1440px, phone 390px English/Chinese, homepage and Wonder Webby; before and after, plus normal-motion hover/keyboard. Phone checks use Chrome device emulation, not physical iOS/Android.
+- Desktop Lighthouse on Wonder Webby: baseline and refined both performance 95 / accessibility 96; CLS 0 / TBT 0; LCP about 1.51s each. These are local laboratory observations, not production field metrics. Existing audit findings remain; no claim of full WCAG conformance.
+- Keep original HTML, bilingual copy/data, image/video assets, official project/itch links, Moon runtime and custom pointer implementation. Verify exact Git content preservation before approval.
+- QA scripts, raw reports and full screenshots are in the parent workspace under `audit/reference-refinement`; review comparison sheets and report under `deliverables/reference-refinement`. Local preview: http://127.0.0.1:4211/game-portfolio/ .

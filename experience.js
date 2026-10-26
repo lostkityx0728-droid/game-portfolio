@@ -106,8 +106,7 @@
   document.addEventListener('pointermove',e=>{
     const tx=e.clientX,ty=e.clientY;pointer=[tx/innerWidth,1-ty/innerHeight];
     if(traceImg){const r=traceImg.getBoundingClientRect();tracePointer=[clamp((tx-r.left)/r.width),clamp(1-(ty-r.top)/r.height)];}
-    const row=e.target.closest('.project-row');
-    if(row&&motion&&fine.matches){const r=row.getBoundingClientRect(),image=$('.row-preview',row);if(image){image.style.left=clamp(tx-r.left,r.width*.46,r.width*.78)+'px';image.style.top=clamp(ty-r.top,20,r.height-15)+'px';image.style.transform=`translate(-50%,-50%) rotate(${(tx-r.left-r.width*.5)*.015-6}deg)`;}}
+    // Project previews stay anchored by CSS, avoiding pointer-driven layout reads.
   },{passive:true});
   document.addEventListener('pointerleave',()=>{pointer=[.5,.5];tracePointer=[.5,.5];});
   // Accessible scene controls mirror the scroll timeline, without capturing wheel or touch events.
